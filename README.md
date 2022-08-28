@@ -6,22 +6,20 @@ Robert Muller — Boston College
 
 ---
 
-[About](resources/about.md) — [Textbooks](resources/textbooks.md) — [Grading](resources/grading.md) — [Canvas](https://bostoncollege.instructure.com/courses/1634507/gradebook) — [Piazza](https://piazza.com/class/l7ca109sok15ag) — [Cornell CS3110](https://www.cs.cornell.edu/courses/cs3110/2020sp/) — [SVM](https://dogfishbar.github.io/dogfishbar.github.io/)
+[About](resources/about.md) — [Textbooks](resources/textbooks.md) — [Grading](resources/grading.md) — [Canvas](https://bostoncollege.instructure.com/courses/1634507/gradebook) — [Piazza](https://piazza.com/class/l7ca109sok15ag) — [SVM](https://dogfishbar.github.io/dogfishbar.github.io/)
 
-[Manual](http://caml.inria.fr/pub/docs/manual-ocaml/index.html) — [OCaml.org](https://ocaml.org/) — [Stdlib](http://caml.inria.fr/pub/docs/manual-ocaml/libref/Stdlib.html) — [Lib](resources/libraries/lib.mli) — [Animate](resources/libraries/animate.mli) — [Image](resources/libraries/image.mli) — [Color](resources/libraries/color.mli) — [Animate Notes](./resources/libraries/animate/README.md)
-
-[Lecture Meetings](https://bccte.zoom.us/j/3306891980) — [Lab Meetings](./resources/labs.md)
+[Manual](http://caml.inria.fr/pub/docs/manual-ocaml/index.html)  — [Stdlib](http://caml.inria.fr/pub/docs/manual-ocaml/libref/Stdlib.html) — [Lib](resources/libraries/lib.mli) — [Animate](resources/libraries/animate.mli) — [Image](resources/libraries/image.mli) — [Color](resources/libraries/color.mli) — [Animate Notes](./resources/libraries/animate/README.md)
 
 ---
 
 <details>
   <summary>Administration</summary>
 
-+ **Meets:** Tuesdays and Thursdays 12PM - 1:15PM, 245 Beacon St. Rm 125.
++ **Meets:** Tuesdays and Thursdays 12PM - 1:15PM, Stokes Hall North Rm 215.
 
-+ **Instructor:** [Robert Muller](http://www.cs.bc.edu/~muller/)
++ **Instructor:** [Robert Muller](https://dogfishbar.github.io/)
 
-+ [Office Hours](https://bccte.zoom.us/j/3306891980): Tuesdays 3PM - 5PM, Wednesdays 4PM - 5PM and by appointment as available.
++ [Office Hours](https://bccte.zoom.us/j/3306891980): 245 Beacon St. Rm 508, Tuesdays 3PM - 5PM, Wednesdays 4PM - 5PM and by appointment.
 
 **Teaching Assistants:**
 
