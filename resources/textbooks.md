@@ -1,5 +1,5 @@
 
-# CSCI 1103 Computer Science 1 Honors
+# CSCI 1100 Gateway to Computer Science
 
 ### Fall 2022
 
@@ -7,25 +7,20 @@
 
 ## Textbooks    
 
-There is one required text for this course and two optional books. We will also post code and lecture notes. 
+There are no required texts for this course but we do strongly recommend the [CS for All](https://redshelf.com/app/ecom/book/1189786/cs-for-all-1189786-9781590282915-christine-alvarado-zachary-dodds-geoffrey-kuenning-ran-libeskind-hadas) text. We will also post code and lecture notes. 
 
 ---
 
-- [OCaml from the Very Beginning](http://ocaml-book.com/), by John Whitington. (**Required**)
+- [CS for All](https://redshelf.com/app/ecom/book/1189786/cs-for-all-1189786-9781590282915-christine-alvarado-zachary-dodds-geoffrey-kuenning-ran-libeskind-hadas), by Christine Alvarado, Zachary Dodds, Geoffrey Kuenning, Ran Libeskind-Hadas. (**Primary Recommendation**)
 
- ![Whitington](img/whitington.jpg)
+ <img src="./img/CSforAll.jpg" width=200>
 
-This is a relatively easy introductory text.  A no-prerequisites approach to teaching a modern general-purpose programming language. Each small, self-contained chapter introduces a new topic in tutorial style, building until the reader can write quite substantial programs. There are plenty of questions and, crucially, worked answers and hints.
-
-This book can be purchased at the BC Bookstore or from [Amazon](http://www.amazon.com/OCaml-Very-Beginning-John-Whitington/dp/0957671105%3FSubscriptionId%3D0ENGV10E9K9QDNSJ5C82%26tag%3Dcoherentpdfco-21%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D0957671105) for about $35.
+This $20 on-line book is used for the well-known CS1 course at Harvey Mudd College. The approach is very similar to ours and this book will be the primary textbook for our course. The organization of our course follows the outline of the book in broad outline but not in detail. You are responsible for keeping up with the reading in this text.
 
 ---
 
-- [Real World OCaml: Functional Programming for the massess](https://realworldocaml.org/), by Yaron Minsky, Anil Madhavapeddy and Jason Hickey. (**Recommended**)
+- [Think Python, How to Think Like a Computer Scientist](https://www.greenteapress.com/thinkpython/thinkpython.pdf), by Allen Downey. (**Secondary Recommendation**)
 
- ![Real World OCaml](img/realWorldOCaml.jpg)
-
-Real World OCaml takes you through the concepts of the language at a brisk pace, and then helps you explore the tools and techniques that make OCaml an effective and practical tool.
-
-This book can be purchased through [Amazon](https://www.amazon.com/Real-World-OCaml-Functional-programming/dp/144932391X) for about $37.
+ <img src="./img/ThinkPython.jpg">
+This free on-line book is a relatively easy introductory text for Python programming. This book is an ok substitute for CS for All if you don't want to part with $20. Think Python is good for reference or if you would like further discussion of a particular topic.
 
