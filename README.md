@@ -8,7 +8,7 @@ Robert Muller — Boston College
 
 [About](resources/about.md) — [Textbooks](resources/textbooks.md) — [Grading](resources/grading.md) — [Canvas](https://bostoncollege.instructure.com/courses/1634507/gradebook) — [Piazza](https://piazza.com/class/l7ca109sok15ag) — [SVM](https://dogfishbar.github.io/dogfishbar.github.io/)
 
-[Manual](http://caml.inria.fr/pub/docs/manual-ocaml/index.html)  — [Stdlib](http://caml.inria.fr/pub/docs/manual-ocaml/libref/Stdlib.html) — [Lib](resources/libraries/lib.mli) — [Animate](resources/libraries/animate.mli) — [Image](resources/libraries/image.mli) — [Color](resources/libraries/color.mli) — [Animate Notes](./resources/libraries/animate/README.md)
+[Manual](http://caml.inria.fr/pub/docs/manual-ocaml/index.html)  — [Standard Library](https://docs.python.org/3/library/index.html) — [Lib](resources/libraries/lib.mli) — [Animate](resources/libraries/animate.mli) — [Image](resources/libraries/image.mli) — [Color](resources/libraries/color.mli) — [Animate Notes](./resources/libraries/animate/README.md)
 
 ---
 
@@ -19,19 +19,19 @@ Robert Muller — Boston College
 
 + **Instructor:** [Robert Muller](https://dogfishbar.github.io/)
 
-+ [Office Hours](https://bccte.zoom.us/j/3306891980): 245 Beacon St. Rm 508, Tuesdays 3PM - 5PM, Wednesdays 4PM - 5PM and by appointment.
++ [Office Hours](https://bccte.zoom.us/j/3306891980): Tuesdays 3PM - 5PM, Wednesdays 4PM - 5PM and by appointment, 245 Beacon St. Rm 508.
 
 **Teaching Assistants:**
 
 <details open> <summary>Calista Agmata</summary>
 
-+ **Office Hours** Friday 5PM - 6PM, Saturday 11AM - 12PM.
++ **Office Hours** Friday 5PM - 6PM, Saturday 11AM - 12PM, 245 Beacon St. Rm 122.
 
 </details>
 
 <details open> <summary>Andy Zheng</summary>
 
-+ **Office Hours** Tuesday and Thursday 11AM - 12PM.
++ **Office Hours** Tuesday and Thursday 11AM - 12PM, 245 Beacon St. Rm 122.
 
 </details>
 
