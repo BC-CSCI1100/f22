@@ -1,4 +1,4 @@
-# CSCI 1103 Computer Science 1 Honors
+# CSCI 1100 Computer Science 1 Honors
 
 ### Fall 2022
 
@@ -22,7 +22,7 @@ When you accept the invitation, GitHub Classroom will make a private copy of the
 
 ![ready](./img/ready.png)
 
-So now you have your own *private* repository containing your copy of the problem set. (Well, your repo is mostly private, it's shared only with the course staff.) Your repo is hosted along with all of the others on our course GitHub site `https://github.com/BC-CSCI1103/`. If you visit that site, you'll see just a few repos, the ones that are privately owned by you and those that are public.
+So now you have your own *private* repository containing your copy of the problem set. (Well, your repo is mostly private, it's shared only with the course staff.) Your repo is hosted along with all of the others on our course GitHub site `https://github.com/BC-CSCI1100/`. If you visit that site, you'll see just a few repos, the ones that are privately owned by you and those that are public.
 
 We'll come back to the discussion of the course workflow after we've set up the software on your computer.
 
@@ -79,20 +79,20 @@ We'll come back to the discussion of the course workflow after we've set up the 
 
    ```bash
    cd
-   mkdir csci1103
+   mkdir csci1100
    ```
 
    Done in this way, you can always navigate to our course home directory by typing
 
    ```bash
    cd
-   cd csci1103
+   cd csci1100
    ```
 
    Or equivalently in one line:
 
    ```bash
-   cd ~/csci1103
+   cd ~/csci1100
    ```
 
    The tilde character `~` designates your home directory.
@@ -104,7 +104,7 @@ We'll come back to the discussion of the course workflow after we've set up the 
 2. Now use the Unix `git` command to retrieve some setup tools from our course site on GitHub.
 
    ```bash
-   git clone https://github.com/BC-CSCI1103/setup.git
+   git clone https://github.com/BC-CSCI1100/setup.git
    ```
 
 
@@ -147,7 +147,7 @@ We'll come back to the discussion of the course workflow after we've set up the 
 
 7. Install various OCaml packages. This is taken care of for you in a `configure` script. Type exactly or cut and paste:
    ```bash
-   cd ~/csci1103/setup
+   cd ~/csci1100/setup
    ./configure
    ```
 
@@ -157,7 +157,7 @@ We'll come back to the discussion of the course workflow after we've set up the 
 
 10. Test your OCaml setup. Type or cut and paste:
 ```bash
-cd ~/csci1103/setup/test/stopNgo/src
+cd ~/csci1100/setup/test/stopNgo/src
 dune exec bin/main.exe
 ```
 <details><summary>If you see a simple animation, try hitting the touchpad a few times to start and stop. If you don't see the animation, open this detail.</summary>
@@ -197,13 +197,13 @@ The last step is setting up the code editor.
    Now type
 
    ```bash
-   cd ~/csci1103/setup
+   cd ~/csci1100/setup
    ./configureAtom
    ```
 3. **Test** Now we can test whether or not your editor settings are working. Move to the testing area and fire up the Atom editor from the unix command shell by typing:
 
    ```bash
-   cd ~/csci1103/setup/test/
+   cd ~/csci1100/setup/test/
    atom .
    ```
 
@@ -214,7 +214,7 @@ The last step is setting up the code editor.
    ![helloAtom](./img/helloAtom.png)
    The tab labeled `main.ml` is displaying OCaml code. This code can be executed by using OCaml's *build manager* `dune`. In the Unix command shell, type
    ```bash
-   cd ~/csci1103/setup/test/hello/src
+   cd ~/csci1100/setup/test/hello/src
    dune exec bin/main.exe
    ```
    > Heads up! The bit on the last line must say `bin/main.exe` even though the `bin` folder has a file named `main.ml`.
@@ -318,7 +318,7 @@ My Windows home directory is elsewhere, back to that in a minute.
 One can make a subdirectory of the current working directory using the *make directory* command `mkdir`. Let's make a directory to hold the materials in this course, type
 
 ```bash
-mkdir csci1103
+mkdir csci1100
 ```
 
 We'll call this the *course home directory*. One can see what files and directories are contained within a directory using the *list* command `ls`. Typing
@@ -327,15 +327,15 @@ We'll call this the *course home directory*. One can see what files and director
 ls
 ```
 
-will show that the directory `/home/muller` now contains one item, the subdirectory `csci1103`. The current working directory can be changed via the *change directory* command `cd`. Typing
+will show that the directory `/home/muller` now contains one item, the subdirectory `csci1100`. The current working directory can be changed via the *change directory* command `cd`. Typing
 
 ```bash
-cd csci1103
+cd csci1100
 ```
 
-> Pro tip: Instead of typing out all of the letters in `csci1103`, you can just type the first letter `c` and then hit the `tab` key and the command shell will finish it for you. A great time saver.
+> Pro tip: Instead of typing out all of the letters in `csci1100`, you can just type the first letter `c` and then hit the `tab` key and the command shell will finish it for you. A great time saver.
 
-Now use the `pwd` command to confirm that the current working directory is `/home/muller/csci1103`. To be clear, the *home directory* is still `/home/muller`. If we want to "return" to our home directory, all 4 of these options will do it:
+Now use the `pwd` command to confirm that the current working directory is `/home/muller/csci1100`. To be clear, the *home directory* is still `/home/muller`. If we want to "return" to our home directory, all 4 of these options will do it:
 
 ```bash
 1. cd /home/muller
@@ -344,7 +344,7 @@ Now use the `pwd` command to confirm that the current working directory is `/hom
 4. cd ..       # means set the current working directory to the parent directory, i.e., move up one level
 ```
 
-Note that you can always move to the home directory for this course by typing `cd ~/csci1103`.
+Note that you can always move to the home directory for this course by typing `cd ~/csci1100`.
 
 You can access your Windows home directory from WSL Linux via the path `/mnt/c/Users/YOUR_WINDOWS_NAME/` where `YOUR_WINDOWS_NAME` is your Windows username. It's convenient to make a link for it, so you could access it quickly, for instance, calling it `windows`. This is how to create such a link:
 
@@ -353,7 +353,7 @@ cd
 ln -s /mnt/c/Users/YOUR_WINDOWS_NAME/ windows    # NOTE THE SPACE!
  ```
 
-Now you can navigate to your Windows home directory from your Ubuntu command shell by typing `cd ~/windows` and to your course home directory by typing `cd ~/csci1103`.
+Now you can navigate to your Windows home directory from your Ubuntu command shell by typing `cd ~/windows` and to your course home directory by typing `cd ~/csci1100`.
 ### 3. Set up the Basic OCaml Ecosystem
 
 The OCaml ecosystem has 3 major parts:
@@ -403,8 +403,8 @@ The OCaml ecosystem has 3 major parts:
 4. Now we'll retrieve some configuration tools from the course GitHub site.
 
    ```bash
-   cd ~/csci1103
-   git clone https://github.com/BC-CSCI1103/setup.git
+   cd ~/csci1100
+   git clone https://github.com/BC-CSCI1100/setup.git
    ```
 
    > Pro tip: Typing the `ls` command will show you that you now have a directory called `setup`, but if you want to see what the directory contains, try the newly installed `tree` command. You should see something like
@@ -414,14 +414,14 @@ The OCaml ecosystem has 3 major parts:
 5. **Configure** [About 7 Minutes] Execute the course `configure` script to install several OCaml packages: `dune`, `merlin`, `animate`, etc. Type `Y` to accept the installation.
 
    ```bash
-   cd ~/csci1103/setup
+   cd ~/csci1100/setup
    ./configure
    ```
 
 6. Now test the basic installation. Use the `dune` build manager to compile and run the sample `hello` program as follows:
 
 7. ```bash
-   cd ~/csci1103/setup/test/hello/src
+   cd ~/csci1100/setup/test/hello/src
    dune exec bin/main.exe
    ```
 
@@ -467,7 +467,7 @@ These commands insert two command lines into your `.bash_profile` file in your U
 OK, are we good to go? Let's try a graphical application. Type
 
 ```bash
-cd ~/csci1103/setup/test/stopNgo/src
+cd ~/csci1100/setup/test/stopNgo/src
 ```
 
 Now use the `dune` build manager to build and run the `stopNGo` program:
@@ -491,7 +491,7 @@ meaning, fire up vscode and have it open the current working directory. This wil
 Fire up a browser in Windows and [install vscode for Windows](https://code.visualstudio.com/download). At the end of the installation, the installer offers to start vscode. Uncheck that box. If you miss this step and the installer starts vscode, exit vscode. In an Ubuntu shell type
 
 ```bash
-cd ~/csci1103/setup
+cd ~/csci1100/setup
 git pull
 ./patchVSCode YOUR_WINDOWS_USERNAME
 ```
@@ -505,7 +505,7 @@ which code
 This should return the path to the vscode program `/mnt/c/Users/.../Programs/Microsoft VS Code/bin`. If so, you're all set. Now fire up vscode in WSL.
 
 ```bash
-cd ~/csci1103/setup/test/hello/src
+cd ~/csci1100/setup/test/hello/src
 code .
 ```
 
@@ -543,7 +543,7 @@ So no we have the development process:
 2. Use the Unix `cd` command to navigate to the `src` directory of the project that you're working on;
 
    ```bash
-   cd ~/csci1103/ps1-dogfishbar/src             # for example
+   cd ~/csci1100/ps1-dogfishbar/src             # for example
    ```
 
 3. fire up `vscode` from WSL by issuing the Unix command
@@ -566,15 +566,15 @@ So no we have the development process:
 
 ## Finishing up the Workflow
 
-Back to the problem set. Whether you're using Windows or MacOS, you can make a local *clone* of your problem set repository on your laptop. Fire up your web browser and visit the course website `https://github.com/BC-CSCI1103/` and scroll down to your repo for pset 1 (mine would be called `ps1-dogfishbar`). Select the green **Clone or download** button.
+Back to the problem set. Whether you're using Windows or MacOS, you can make a local *clone* of your problem set repository on your laptop. Fire up your web browser and visit the course website `https://github.com/BC-CSCI1100/` and scroll down to your repo for pset 1 (mine would be called `ps1-dogfishbar`). Select the green **Clone or download** button.
 
 ![clone](./img/clone.png)
 
 Copy the web URL of the repo to your clipboard. Then, fire up a Unix command shell and make a local clone of the repo by typing the `git clone` command:
 
 ```bash
-cd ~/csci1103
-git clone https://github.com/BC-CSCI1103/ps-demo-dogfishbar.git
+cd ~/csci1100
+git clone https://github.com/BC-CSCI1100/ps-demo-dogfishbar.git
 ```
 
 Of course, rather than `ps-demo-dogfishbar.git`, the rightmost bit for you will have something like `ps1-smith.git` rather than `ps-demo-dogfishbar.git`. The `git clone` command  will cause the `git` and `GitHub` systems to make a local copy of your remote (master) repo. The repo for ps1 has four items:
@@ -587,7 +587,7 @@ Of course, rather than `ps-demo-dogfishbar.git`, the rightmost bit for you will 
 The distributed source code should always compile and run. Type
 
 ```bash
-cd ~/csci1103/ps1-YOUR_GITHUB_ID/src/
+cd ~/csci1100/ps1-YOUR_GITHUB_ID/src/
 dune exec bin/main.exe
 ```
 
@@ -600,7 +600,7 @@ To review, you'll use the [atom](https://atom.io/) or [vscode](https://code.visu
 When your code is working (and looks great!) you can submit it for grading using `git push` to transfer your local working repository to your master problem set repository on the Github course website.
 
 ```bash
-cd ~/csci1103/ps1-YOUR_GITHUB_ID/
+cd ~/csci1100/ps1-YOUR_GITHUB_ID/
 ... edit ... git add ... git commit ...
 git push
 ```

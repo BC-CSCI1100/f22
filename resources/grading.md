@@ -1,4 +1,4 @@
-# CSCI 1103 Computer Science 1 Honors
+# CSCI 1100 Gateway to Computer Science
 
 Robert Muller - Boston College
 
@@ -8,7 +8,7 @@ Robert Muller - Boston College
 
 ## Grading
 
-Like most CS courses, CSCI 1103 is very much a *learn by doing* course. Reflecting this, grades will emphasize the problem sets. Grades will be computed on a 200 point scale. The points are distributed as follows:
+Like most CS courses, CSCI 1100 is very much a *learn by doing* course. Reflecting this, grades will emphasize the problem sets. Grades will be computed on a 200 point scale. The points are distributed as follows:
 
 + 110 points over 7 open problem sets;
 
@@ -24,7 +24,7 @@ Grades will be recorded on the Canvas website.
 
   ```bash
   > cd
-  > cd csci1103/ps8-smith
+  > cd csci1100/ps8-smith
   > git add .
   > git commit "Martha Smith: Final"
   > git push
@@ -38,5 +38,4 @@ Grades will be recorded on the Canvas website.
 + Late open problem sets will be penalized 25% each day.
 + Late closed problem sets will not be accepted without a written note from a physician.
 + Any violation of the [university's policy on academic integrity](http://www.bc.edu/offices/stserv/academic/integrity.html) will result in a failing grade for the course.
-
 
