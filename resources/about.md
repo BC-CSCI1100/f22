@@ -28,7 +28,8 @@ CSCI 1100 Gateway to Computer Science meets Monday thru Thursday, 2PM - 2:50PM i
 
 ##### Screens When and Where
 
-Though we'll be using our laptops regularly in CSCI 1100, we'll only be using them for the purposes of workshop exercises and problem solving. Otherwise we'll have screen-less classrooms. This means that **no open laptops, tablets, or smart-phones will be allowed in class**. All lecture notes and sample programs will be posted to the course website. If you have special circumstances that require you to bring a screen to class, please see me.
+Though we'll be using our laptops regularly in CSCI 1100, we'll only be using them for the purposes of workshop exercises and problem solving. Otherwise we'll have screen-less classrooms. This means that **no open laptops, tablets, or smart-phones will be allowed in class**. All lecture notes and sample programs will be posted to the course website. 
 
 + **If you do not own a laptop please see me.**
-+ **If you have a special need to use your laptop during class, please see me.**
++ **If you have special circumstances that require you to use your laptop during class, please see me.**
+
