@@ -13,7 +13,7 @@ CSCI 1100 is centered around **methods for problem solving**, both technical and
 With an eye toward downstream courses in the CS curriculum, we'll focus on three areas:
 
 1.  Learning how to code --- we'll use the Python programming language,
-2. Learning how to work with computer systems --- we'll become proficient with the unix command line interface,
+2. Learning how to work with computer systems --- we'll become proficient with the unix command line interface, we'll learn how to use git repositories and how to share them with GitHub
 3. Learning some mathematical tools that have proven to be helpful in problem solving, we'll learn about sets and relations, numeral systems, we'll review a little trigonometry and geometry.
 
 ##### Methods
