@@ -6,38 +6,26 @@
 
 ## About
 
-CSCI 1100 Gateway to Computer Science is a 4-credit introductory course in computer science that is designed to prepare students for entry to the computer science curriculum for either a major or a minor in computer science. Though CSCI 1100 credits don't count toward either the major or the minor, the course will leave students well-positioned for success in the first course in the CS curriculum, CSCI 1101 Computer Science 1.
+CSCI 1100 Gateway to Computer Science is a 4-credit introductory course in computer science that is designed to prepare students for entry to the computer science curriculum for either a major or a minor in computer science. Though CSCI 1100 credits don't count toward either the major or the minor, the course will position students for success in one of the first course in the CS curriculum, CSCI 1101 Computer Science 1 or CSCI 1103 Computer Science 1 Honors.
 
-Among many other things, students in CS1100 will learn to code using the Python programming language. By the end of the course you should be able to design fairly complex programs that do interesting and useful things. Although almost all of the work you do for the course involves coding, the subject is wider than just the writing of programs, much less programs in any particular programming language. You will learn something about the particular approach computer science takes to representing and manipulating information, and to solving problems.
+CSCI 1100 is centered around **methods for problem solving**, both technical and non-technical. We'll learn  how to develop repetitive algorithms for problem solving and how to break problems into manageable parts, such that an assembly of the solutions to the parts yields a solution to the whole problem. We'll also develop tools and methods for getting unstuck when we're stuck.
 
-Methods
-CS1101 is an immersion course, we'll be learning about computation by immersing ourselves in Python code. The first order of business is to learn how to code. By way of demonstration, we'll be covering a lot of Python code in class. Our starting point will be familiar to anyone experienced with basic high-school algebra. Using this as our foundation, we'll introduce new programming concepts and constructs, step by step, until we've covered most of the tools available to programmers developing small-scale programs (involving what are called procedural abstractions). Our first programs will have between say 10 and 20 lines of code. By the end of the semester we'll be able to manage programs with a few hundred lines of code.
+With an eye toward downstream courses in the CS curriculum, we'll focus on three areas:
+
+1.  Learning how to code --- we'll use the Python programming language,
+2. Learning how to work with computer systems --- we'll become proficient with the unix command line interface,
+3. Learning some mathematical tools that have proven to be helpful in problem solving, we'll learn about sets and relations, numeral systems, we'll review a little trigonometry and geometry.
+
+##### Methods
+
+CSCI 1100 is an immersion course, we'll be learning about computation by immersing ourselves in Python code. The first order of business is to learn how to code. By way of demonstration, we'll be covering a lot of Python code in class. Our starting point will be familiar to anyone experienced with basic high-school algebra. Using this as our foundation, we'll introduce new programming concepts and constructs, step by step, until we've covered most of the tools available to programmers developing small-scale programs (involving what are called procedural abstractions). Our first programs will have between say 10 and 20 lines of code. By the end of the semester we'll be able to manage programs with a few hundred lines of code.
 Like playing a musical instrument, coding is a skill that can only be developed with practice. Learning to code is hard work but, as you'll find, getting a piece of software to work is extremely satisfying.
 
-CS1101 consists of two weekly 75 minute lectures and one weekly 60 minute lab. There will be weekly problem sets, all of which require the development of Python code. Some problem sets will involve hand-written work and diagrams.
+CSCI 1100 Gateway to Computer Science meets Monday thru Thursday, 2PM - 2:50PM in Stokes North, Rm 215.
 
-Section 04 of CS1101 Computer Science I meets TR, 9AM - 10:15AM in Fulton 415.
-Screens When and Where
-Section 04 of CS1101 will have screen-less classrooms. This means that no open laptops, tablets, or smart-phones will be allowed. All lecture notes and sample programs will be posted to the course website. If you have special circumstances that require you to bring a screen to class, please see me.
-Unlike lecture, students are required to bring their laptops to every lab. If you do not own a laptop please see me.
+##### Screens When and Where
 
+Though we'll be using our laptops regularly in CSCI 1100, we'll only be using them for the purposes of workshop exercises and problem solving. Otherwise we'll have screen-less classrooms. This means that **no open laptops, tablets, or smart-phones will be allowed in class**. All lecture notes and sample programs will be posted to the course website. If you have special circumstances that require you to bring a screen to class, please see me.
 
-
-This course serves dual purposes both as the Honors introductory course for Computer Science and as a 2000-level elective in Functional Programming. The 2000-level version of the course is a good option for Bachelor of Arts in CS majors looking to fulfill the 2000-level elective requirement. Of course this is one course, but students enrolled in the 2000-level version  will have additional work requirements on several problem sets.
-
- CSCI 1103 teaches coding using the [OCaml](http://ocaml.org) dialect of the [ML functional programming language](https://en.wikipedia.org/wiki/ML_(programming_language)). By the end of the course you should be able to design fairly complex programs that do interesting and useful things. Although almost all of the work you do for the course involves coding, the subject is wider than just the writing of programs, much less programs in any particular programming language. You will learn something about the particular approach Computer Science takes to representing and manipulating information, and to solving problems.
-
-### Methods
-
-CSCI 1103 is an immersion course, we'll be learning about computation by immersing ourselves in OCaml code. The first order of business is to learn how to code. By way of demonstration, we'll be covering a lot 
-of OCaml code in class.  Our starting point will be familiar to anyone experienced with basic high-school algebra. Using this as our foundation, we'll introduce new programming concepts and constructs, step by step, until we've covered most of the tools available to programmers developing small-scale programs (involving what are called *procedural abstractions*). Our first programs will have between say 10 and 20 lines of code. By the end of the semester we'll be able to manage programs with a few hundred lines of code.
-
-Like playing a musical instrument, coding is a skill that can only be developed with practice. Learning to code is hard work but, as you'll find, getting a piece of software to work is extremely satisfying.
-
-CSCI 1103 consists of three weekly 50 minute lectures and one weekly 50 minute lab. There will be weekly problem sets, all of which require the development of OCaml code. Some problem sets will involve hand-written work and diagrams.
-
-### Learning On Line
-
-**CSCI 1103 Computer Science 1 Honors, meets MWF 11AM [On Line](https://bccte.zoom.us/j/3306891980).**
-
-Obviously we are in unusually difficult times so we'll all have to work a little harder to continue to grow and learn notwithstanding the challenges presented by the pandemic. In my experience, the most difficult challenge presented by on-line learning is engagement. So please make an extra effort to gear up for each meeting and engage with the class and lab sections. Ask questions and try to volunteer to offer answers. Consider keeping your camera on during zoom meetings. We want a high level of energy as we explore this incredible field.
++ **If you do not own a laptop please see me.**
++ **If you have a special need to use your laptop during class, please see me.**
