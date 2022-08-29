@@ -25,13 +25,13 @@ Robert Muller — Boston College
 
 <details open> <summary>Calista Agmata</summary>
 
-+ **Office Hours** ??.
++ **Office Hours** Friday 5PM - 6PM, Saturday 11AM - 12PM.
 
 </details>
 
 <details open> <summary>Andy Zheng</summary>
 
-+ **Office Hours** ??.
++ **Office Hours** Tuesday and Thursday 11AM - 12PM.
 
 </details>
 
