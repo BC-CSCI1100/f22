@@ -15,7 +15,7 @@ Robert Muller — Boston College
 <details>
   <summary>Administration</summary>
 
-+ **Meets:** Tuesdays and Thursdays 12PM - 1:15PM, Stokes Hall North Rm 215.
++ **Meets:** Monday thru Thursday 2PM - 2:50PM, Stokes Hall North Rm 215.
 
 + **Instructor:** [Robert Muller](https://dogfishbar.github.io/)
 
