@@ -31,7 +31,7 @@ Robert Muller — Boston College
 
 <details open> <summary>Andy Zheng</summary>
 
-+ **Office Hours** Tuesday and Thursday 11AM - 12PM, 245 Beacon St. Rm 122.
++ **Office Hours** Tuesday and Thursday 12PM - 1PM, 245 Beacon St. Rm 122.
 
 </details>
 
