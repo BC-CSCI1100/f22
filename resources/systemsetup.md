@@ -1,4 +1,4 @@
-# CSCI 1100 Computer Science 1 Honors
+# CSCI 1100 Gateway to Computer Science
 
 ### Fall 2022
 
@@ -8,7 +8,7 @@ Robert Muller - Boston College
 
 ## Setting Up Your System
 
-In this course, we'll be developing code in a Unix environment on either MacOS Catalina or on a Windows 10 system. If you have an older version of one of these operating systems, you'll need to upgrade your system before proceeding further with problem set 1. If you cannot upgrade for one reason or another, please get in touch with the instructor.
+In this course, we'll be developing Python programs in a Unix environment on either MacOS or on a Windows system. If you have a much older version of one of these operating systems, you  may want to upgrade your system before proceeding further with problem set 1. 
 
 The coding environment that we're going to install has a lot of parts and the installation process involves many steps that have to be carried out carefully and exactly as specified. Some of the installation steps take a long time so set aside plenty of time for this work. If you run into problems with the installation process, please get in touch with a course staffer. Most of the installation steps will involve using a *command shell* to issue commands to the Unix operating system. Command shells may be new for you, but the Unix command shell is quite powerful and widely used so learning to work with it will be a good skill to develop in its own right.
 
@@ -16,26 +16,29 @@ The coding environment that we're going to install has a lot of parts and the in
 
 The basic flow of work for the course will be as follows. From time to time, you'll receive an email from GitHub Classroom with an invitation to accept a problem set. The email will look something like this:
 
-![invite](./img/accept.png)
+![invite](./img/psetaccept.png)
 
 When you accept the invitation, GitHub Classroom will make a private copy of the problem set for you in a *repository* on GitHub and provide you with a URL link to that repo.
 
-![ready](./img/ready.png)
+![ready](./img/psetaccepted.png)
 
-So now you have your own *private* repository containing your copy of the problem set. (Well, your repo is mostly private, it's shared only with the course staff.) Your repo is hosted along with all of the others on our course GitHub site `https://github.com/BC-CSCI1100/`. If you visit that site, you'll see just a few repos, the ones that are privately owned by you and those that are public.
+So now you have your own private repository containing your copy of the problem set, it's shared only with the course staff. Your repo is hosted along with all of the others on our course GitHub site `https://github.com/BC-CSCI1100/`. If you visit that site, you'll see just a few repos, the ones that are privately owned by you and those that are public.
 
 We'll come back to the discussion of the course workflow after we've set up the software on your computer.
 
-## Setup for MacOS Catalina (10.15)
+---
 
-+ **If you're using a Windows system, skip this section -- scroll down to *Setup for Windows 10*.**
-+ **If you're using a Mac running on older version of MacOS such as MacOS Mojave (10.14), consider upgrading your version of MacOS to Catalina. It's free in the App Store. If you upgrade, it's important that you complete the upgrade before following any of the steps below.**
-+ **Respond affirmatively with a Y when queried by any installation step.**
-+ **The installation process for Macs requires the installation of Xcode Developer Tools for Apple's App Store. Xcode requires around 8 Gigabytes of storage.**
+## Setup for MacOS
+
+**If you're using a Windows system, skip this section -- scroll down to Setup for Windows.** The MacOS setup has 3 main parts:
+
+1. Setting up your Work Area
+2. Installing Python and some related software
+3. Installing and Configuring the Visual Studio Code (vscode) Text Editor
 
 ---
 
-### Setting up your Work Area
+### 1. Setting up your Work Area
 
 1. We're going to be using the MacOS **Terminal** application as our Unix command shell. We'll be using it often so it would be wise to copy the icon for the Terminal application
 
@@ -95,211 +98,209 @@ We'll come back to the discussion of the course workflow after we've set up the 
    cd ~/csci1100
    ```
 
-   The tilde character `~` designates your home directory.
-
-### Setting up the OCaml Ecosystem
-
-1.  Visit Apple's App Store and install Xcode Developer Tools version 11.6 or better.
-
-2. Now use the Unix `git` command to retrieve some setup tools from our course site on GitHub.
-
+   The tilde character `~` designates your home directory. 
+   
+   > **Pro tip:** If you don't like to type, you can start with the first few letters of a name then hit the tab key, bash will finish the name for you if it can.
+   
+   **Configuring git**
+   
+   We'll be using the `git` system. It likes to know a bit about you. Fire up a terminal and type
+   
    ```bash
-   git clone https://github.com/BC-CSCI1100/setup.git
+   git config --global user.email "YOUR EMAIL ADDRESS"
+   git config --global user.name "YOUR NAME"
    ```
+   
+   where "YOUR EMAIL ADDRESS" and "YOUR NAME" are obviously yours. 
+   
+   Use `git clone` to install the course software library:
+   
+       cd ~/csci1100
+       git clone https://github.com/BC-CSCI1100/lib.git
 
+The `git clone` command will likely cause GitHub to ask you for your GitHub username and password. Heads up! It doesn't really want your password, it wants you *personal access token* that you made in PS0. If you have it, paste it into the password field. If you don't have it, no problem, make a new one and paste that one into the password field.
 
-3. Install [MacPorts](https://www.macports.org/install.php), a utility for managing software packages on Macs.
+If the above steps don't work, see the instructor.
 
-   > Heads up! Do you already use another package manager such as Homebrew? If so, be aware that some of our course software doesn't work when supporting software has been installed with Homebrew. For the purposes of this course, please use MacPorts.
+To finish up this part, stash the location of the course animation library away in the `PYTHONPATH` environment variable.
 
-   After installing MacPorts, X-out your command shell.
-
-4. Fire up the Terminal app again and use MacPorts to install OCaml's package manager `opam` and a graphics support library `lablgtk`.
-
-   > Heads up! The MacPorts app is invoked from the Unix command line as `port`. Also, you'll have to use `sudo` as shown, this will require you to enter your password.
-
-   ```bash
-   sudo port install opam lablgtk2 tree
-   ```
-
-5. Initialize `opam`.
-
-   ```bash
-   opam init
-   ```
-
-   > Heads up! Best to copy and paste the following command -- the two quotation marks are *backquotes* (upper left, below the `esc` key). This command won't work if you type the normal single-quote marks.
-
-   ```bash
-   eval `opam config env`
-   ```
-
-6. The installation script for OCaml's package manager `opam`, also installs the other main parts of the OCaml system. Fire up the OCaml interpreter to confirm that it's working.
-   ```bash
-   ocaml
-   ```
-   You should see something like:
-   ```ocaml
-   OCaml version 4.8
-   #
-   ```
-   It's fine if you have OCaml 4.11 instead. You can type in expressions as you like, ending them with two consecutive semi-colons `;;`. Type `Ctrl-d` (i.e., hold down the `Control` key and while still holding it, type the `d` key) to exit the REPL.
-
-7. Install various OCaml packages. This is taken care of for you in a `configure` script. Type exactly or cut and paste:
-   ```bash
-   cd ~/csci1100/setup
-   ./configure
-   ```
-
-8. Install the [XQuartz](https://www.xquartz.org/) X-Window server.
-
-9. Reboot your computer.
-
-10. Test your OCaml setup. Type or cut and paste:
 ```bash
-cd ~/csci1100/setup/test/stopNgo/src
-dune exec bin/main.exe
+echo "export PYTHONPATH=\":$HOME/csci1100/lib/\"" >> ~/.bash_profile
+source ~/.bash_profile
 ```
-<details><summary>If you see a simple animation, try hitting the touchpad a few times to start and stop. If you don't see the animation, open this detail.</summary>
 
-   Something is wrong. Try copying and pasting the following two lines into the command shell:
-   > ```bash
-   > echo "eval $(opam env)" >> ~/.bash_profile
-   > source ~/.bash_profile
-   > ```
+X-out the present terminal window and fire up a new one.
+
+### 2. Installing Python and some related software
+
+Visit [the Python site](https://www.python.org/downloads/) and download and install Python version 3.10. If you fire up a terminal, you should be able to start by typing either
+
+```bash
+python3
+```
+
+or simply
+
+```bash
+python
+```
+
+Go ahead and exit Python by typing `ctrl-d`, (i.e., hold down the control key, lower left, and type the letter d). We're going to use a local Python library that is based on two non-local Python libraries: `numpy` and `pygame`. In order to install them, type
+
+``` bash
+python3 -m ensurepip --upgrade
+python3 -m pip install -U pygame --user
+python3 -m pip install -U numpy --user
+```
+
+**Test Your Python Installation**
+
+Before installing the editor, lets check to see if Python and our library are working correctly. Type
+
+```bash
+python ~/csci1100/lib/test/scroll.py
+```
+
+You should see something like this
+
+ <img src="./img/scroll.png" width=400>
+
+If the above steps don't work, see the instructor.
+
+### 3. Installing and Configuring the Visual Studio Code (vscode) Editor
+
+1. Install [the vscode editor](https://code.visualstudio.com/).
+
+2. Reboot your laptop.
+
+3. Fire up the vscode editor. This can be done either through the GUI by clicking on the vscode icon
+
+   <img src="./img/vscodeIcon.png">
+
+   or better yet, by using the unix command shell. Let's assume I've followed the advice and placed my course home directory `csci1100` in myhome directory and that I've cloned problem set 1 inside `csci1100`. 
+
+   > That is, after accepting problem set 1 as described above, I fired up a terminal shell and typed
    >
-   > Now try the `dune exec` command again. If it still doesn't work, contact a course staffer.
+   > ```bash
+   > git clone https://github.com/BC-CSCI1100/ps1-dogfishbar.git
+   > ```
 
-</details>
-
-### Setting up the Atom Editor
-
-The last step is setting up the code editor.
-
-1. **Install** Download and install the [Atom editor, v 1.50.0](https://atom.io/). You're welcome to use whatever code editor you'd like: Atom, vscode, sublime text, emacs and vim all come to mind. Following the instructions here will leave you with a very serviceable Atom-based coding environment. Many CS students at BC use Atom for all of their CS courses at BC.
-
-   **After you've installed Atom, use the Finder to open your Applications folder to ensure that Atom has been installed there. You should see the Atom icon**
-
-   **<img src="./img/AtomIcon.png" width="100px" />**
-
-   **If you don't see the Atom icon in your Applications folder, drag it there.** Also consider dragging the icon to your task bar.  Now fire up Atom by double-clicking the icon, then, under the **Atom** menu item, select **Install Shell Commands**. Exit Atom.
-
-2. **Configure** Atom is an "extensible" editor. This means that it has processes in place for people to write and install *packages* of code that tailor the editor for particular applications. Executing the following command will install a number of packages that tailor Atom for OCaml. Type
-   ```bash
-   which apm
-   ```
-
-   <details><summary>This should return something like <tt>/usr/local/bin/apm</tt>.  If it doesn't, open this item.</summary>
-
-   If you didn't see <tt>/usr/local/bin/apm</tt>, it means that Atom didn't install the `apm` and `atom` shell commands for you. You may have failed to move Atom to the `Applications` folder. If so, try again. Then open Atom then under the *Atom* menu item select <b>Install Shell Commands</b>. Then exit Atom.
-   </details>
-
-   Now type
+   Then I would navigate to the coding area of my repo by typing:
 
    ```bash
-   cd ~/csci1100/setup
-   ./configureAtom
-   ```
-3. **Test** Now we can test whether or not your editor settings are working. Move to the testing area and fire up the Atom editor from the unix command shell by typing:
-
-   ```bash
-   cd ~/csci1100/setup/test/
-   atom .
+   cd ~/csci1100/ps1-dogfishbar/src/
+   code .
    ```
 
-   You should see Atom's welcome page with three or four tabs, `Project`, `Welcome` and `Welcome Guide`. (There may also be one related to "Telemetry".)   ![atomwelcome](./img/AtomOpen.png)
+   Of course, for you, instead of  `dogfishbar` you would use your GitHub ID. This should open your problem set harness code in vscode. If this doesn't work, get in touch with course staff. Now select the *Explorer* icon at far upper left. You'll see a folder `src` which contains the harness code. Open that and you'll see two Python source files `helloWorld.py` and `fahrenheit.py`. 
 
-   Dismiss all but the `Project` tab by X-ing them out (upper right). Now open the `hello` directory, then `src` then `bin` then select `main.ml`. You should see this
-
-   ![helloAtom](./img/helloAtom.png)
-   The tab labeled `main.ml` is displaying OCaml code. This code can be executed by using OCaml's *build manager* `dune`. In the Unix command shell, type
-   ```bash
-   cd ~/csci1100/setup/test/hello/src
-   dune exec bin/main.exe
-   ```
-   > Heads up! The bit on the last line must say `bin/main.exe` even though the `bin` folder has a file named `main.ml`.
-
-   Introduce an error in this code by deleting the quotation mark at the end of line 8. You should see
-
-   ![merlin](./img/merlinAtom.png)
-
-   the red dot on line 8 indicates that the OCaml editor support packages have found a problem with your code. Generally speaking, you'll want to make sure that your Atom editor window is free of these errors (i.e., no red dots!). If you restore the quotation mark the red dot will disappear.
+   When you first open a Python file, vscode will recognize Python and will ask you if you'd like to install a Python extension to help with editing. Install this extension. 
 
    If you don't see this behavior, contact a course staffer. If you do, great! You're alll done! Scroll down to **Finishing up the Workflow** below.
 
 ---
 
-## Setup for Windows 10
+## Setup for Windows
 
-> + **These Instructions are cribbed in part from Cornell's CS3110 Spring 2020**
-> + **These instructions presume that you are running Windows 10. If you are running an earlier version of Windows, these instructions won't work.**
-> + These instructions are rather lengthy and detailed. It's important to follow them carefully. Contact a course staffer if you run into problems.
+We're going to run a linux/unix operating system within Windows using version 2 of Windows Subsystem for Linux (WSL2). WSL2 works on Windows 11 systems and on Windows 10 systems that aren't too old. If you run into trouble early in these instructions, you might have an older version of Windows 10, see me. There are many different variations of Linux, we'll be using one of the most popular [Ubuntu](https://ubuntu.com/). (No need to register.)
 
-The basic idea is to make use of the Windows Subsystem for Linux (WSL) and Microsoft's vscode editor. Our setup has 5 parts:
+Our steps are these:
 
-1. Enable Windows Subsystem for Linux (WSL) and Install Ubuntu
-2. Set up your Work Area
-3. Set up the Basic OCaml Ecosystem
-4. Add Support for Graphical Applications
-5. Install and Configure the vscode Editor
+1. Enable Windows Subsystem for Linux (WSL2) and Install Ubuntu
+3. Set up our Working Area and Install CSCI1100 Library
+4. Install the Visual Studio Code Editor
 
-### 1. Enable Windows Subsystem for Linux (WSL) and Install Ubuntu
+Let's get started.
 
-[Here is an (optional) introduction](https://github.com/michaeltreat/Windows-Subsystem-For-Linux-Setup-Guide/blob/master/readmes/01_preface.md) to what WSL is and why you need it.
+---
 
-**Don’t skip step 1:** *a number of problems have resulted from laptops having older versions of Windows 10*.
+### 1. Enable Windows Subsystem for Linux (WSL2) and Install Ubuntu
 
-1. **Check your Windows Build** Run the `winver` program by selecting *Start* then typing "winver" (then hit Enter). A dialog box will open. Look on the second line for “OS Build XXXXX.YYY”. If the XXXXX part of that is a number smaller than 17643, you're going to need to update Windows. If so, go to *Settings* → *Update & Security* → *Windows Update* → *Check for updates* and install updates. When finished, run `winver` again to confirm that the build is now 17643 or greater. If you can’t get a recent build, your hardware might be a bit older, get in touch with the instructor.
+Before we get too far into these instructions, it will be useful to install the [Windows Terminal](https://docs.microsoft.com/en-us/windows/terminal/install) app, it's very handy. Once WSL2 is enabled and Ubuntu is up and running, you'll be able to have one Windows Terminal tab hosting Windows Powershell while another tab hosts a WSL/Ubuntu bash shell.
 
-2. **Record your Windows Username** Select *Start* and then type "cmd". A Windows cmd shell will open. The prompt should be of the form`C:\Users\username>` where `username` is your Windows username. Write this down or remember it, we'll need it later. Close the cmd shell.
+Unix development in Windows is made possible by the Windows Subsystem for Linux (WSL). If you have Windows 11 or a recent version of Windows 10, WSL is easy to install. If you don’t have that recent of a version, try running Windows Update to get it.
 
-3. **Enable WSL** Open Windows PowerShell as Administrator. To do that, select *Start*, type "PowerShell" then right-click on *Windows PowerShell* (it should be at the top as the best match), and select *Run as administrator*. Select *Yes* to allow changes. At the prompt (which is probably something like `PS C:\windows\system32>`), enter the following command.
+>  **Tip**
+>
+> If you get an error about the “virtual machine” while installing WSL, you might need to enable virtualization in your machine’s BIOS. The instructions for that are dependent on the manufacturer of your machine. Try googling “enable virtualization [manufacturer] [model]”, substituting for the manufacturer and model of your machine. This Red Hat Linux page might also help.
 
-   > If you're careful you can type in all of the commands in this Setup guide but cutting and pasting is generally more reliable.
-   ```bash
-   Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux
-   ```
-   If you're prompted to restart, do so. Otherwise, close PowerShell.
+With a recent version of Windows, and assuming you’ve never installed WSL before, here’s all you have to do:
 
-4. **Install Ubuntu 20.4** Select *Start*, type "Microsoft Store", and open the *Microsoft Store* app. Click *Search*, and type "Ubuntu". Scroll down to Apps, and choose **Ubuntu 20.04 LTS**. From the Ubuntu page. Select *Get*. After the download finishes, click *Launch*. The install will then finish.
+1. Open Windows PowerShell as Administrator. To do that, click Start, type PowerShell, and it should come up as the best match. Click “Run as Administrator”, and click Yes to allow changes.
+2. Run `wsl --install`. (Or, if you've already installed WSL but not Ubuntu before, then instead run `wsl --install -d Ubuntu`.) When the Ubuntu download is completed, it will likely ask you to reboot. Do so. The installation will automatically resume after the reboot.
+3. You'll be prompted to create a Unix username and password. You can use any username and password you wish. It has no bearing on your Windows username and password (though you are free to re-use those). Do not put a space in your username. **Don't forget your password.** You'll need it later.
 
-   > You may want to pin the Ubuntu app to your Windows *Start* menu. You can do this by right-clicking on the Ubuntu icon.
+**Warning**
 
-   You'll be prompted to create a UNIX username and password. You can use any username and password you wish. It has no bearing on your Windows username and password (though you are free to re-use those).
+Don't proceed with these instructions if you were not prompted to create a Unix username and password. Something has gone wrong. Perhaps your Ubuntu installation did not complete correctly. Try uninstalling Ubuntu and reinstalling it through the Windows Start menu.
 
-   > Heads up! You'll need to remember your Unix username and password for future use.
+**Ubuntu setup**. These rest of these instructions assume that you installed Ubuntu (20.04) as the Linux distribution. That is the default distribution in WSL. In principle other distributions should work, but might require different commands from this point forward.
 
-   You're now interacting with the Unix operating systems using a terminal application running the Bash shell. The prompt will look something like
-   ```bash
-   user@machine:~$
-   ```
+Open the Ubuntu app. (It might already be open if you just finished installing WSL.) You will be at the Bash prompt, which looks something like this:
 
-   You’ll want to make sure copy-and-paste into the terminal is enabled: Click on the icon on the top left of the shell window, select *Properties*, and make sure the checkbox for *Use Ctrl+Shift+C/V as Copy/Paste* is checked. Now **Ctrl+Shift+C** will copy and **Ctrl+Shift+V** will paste into the terminal.
+<img src="./img/bash.png" width=600>
 
-   > + Heads up! You have to include **Shift** as part of that keystroke.
-   >
-   > + If you don’t see the *Use Ctrl+Shift+C/V as Copy/Paste* option, your Windows build is too old. Make sure you updated Windows to a new enough build, as described above. Right-click might still work to paste even if you don’t have a new enough build.
+**Warning**
 
-5. **Update Ubuntu** [About 4 mintes] Software is generally deployed in *packages* and most systems have tools for managing packages. One of the more widely used package managers in the Unix environment is the *advanced packaging tool* `apt`. Enter the following command into the shell:
-   ```bash
-   sudo apt update
-   ```
-   You'll be prompted for the UNIX password you chose earlier. The command `apt update` updates the list of packages managed by `apt` on your system. The prefix `sudo` tells Unix to run the  `apt udate` command as the *system administrator*, aka *super user*.
+If that prompt instead looks like root@...#, something is wrong. Did you create a Unix username and password for Ubuntu in the earlier step above? If so, the username in this prompt should be the username you chose back then, not root. Do not proceed with these instructions if your prompt looks like root@...#. Perhaps you could uninstall Ubuntu and reinstall it.
 
-   > Heads up!  Running Unix commands with `sudo` is potentially dangerous and should't be done lightly. Do not get into the habit of putting `sudo` in front of commands.
+**Check your Internet Connection**
 
-   Now run the `apt upgrade` command to actually upgrade all the `apt` software packages; this took about 3 minutes on my system. If you're prompted about configuring libssl, just hit Enter to accept the default choices.
-   ```bash
-   sudo apt ungrade -y
-   ```
-6. **Install a few other Unix Packages** [About 7 minutes] Several of the OCaml tools that we'll be using rely on lower-level operating system tools and packages. Install these as follows. Generally speaking, you should respond affirmatively when prompted.
-   ```bash
-   sudo apt install m4 pkg-config libcairo2-dev libgnomecanvas2-dev tree unzip
-   ```
+Can Ubuntu see the internet? Find out by typing:
 
-   At this point, you can run a “bare-bones” Ubuntu Unix terminal as an application within your WSL system. It's worth noting that as of this writing, WSL doesn't install any support for graphics of any kind including the graphical user interfaces (GUIs) that you're accustomed to.
+```bash
+ping google.com
+```
 
-### 2. Set up your Work Area
+If you don't see packet transmission information, Ubuntu can't see what Windows presumably sees, this is probably due to a Windows Defender Firewall set up on your Windows Systems. See the instructor.
+
+**Enable copy-and-paste:**
+
+1. Click on the Ubuntu icon on the top left of the window.
+2. Click Properties
+3. Make sure “Use Ctrl+Shift+C/V as Copy/Paste” is checked.
+
+Now Ctrl+Shift+C will copy and Ctrl+Shift+V will paste into the terminal. Note that you have to include Shift as part of that keystroke.
+
+Run the following command to update the APT package manager, which is what helps to install Unix packages:
+
+```bash
+sudo apt update && sudo apt upgrade -y
+```
+
+You will be prompted for the Unix password you chose. The `sudo` runs the `apt` command as the administrator, aka “super user”. In other words, do this command from a privileged mode. **Running commands with `sudo` is potentially dangerous and should not be done lightly.** Do not get into the habit of putting `sudo` in front of commands, and do not randomly try it without reason.
+
+Then install some useful packages that we'll need:
+
+```bash
+sudo apt install -y zip tree python3-pip
+```
+
+**File Systems**
+
+WSL has its own filesystem that is distinct from the Windows file system, though there are ways to access each from the other.
+
+When you launch Ubuntu and get the $ prompt, you are in the WSL file system. Your home directory there is named ~, which is a built-in alias for the path /home/your_ubuntu_user_name. You can run explorer.exe . (note the dot at the end of that) to open your Ubuntu home directory in Windows explorer.
+
+From Ubuntu, you can access your Windows home directory at the path `/mnt/c/Users/your_windows_user_name/`.
+
+From Windows Explorer, you can access your Ubuntu home directory under the Linux icon in the left-hand list (near “This PC” and “Network”), then navigating to Ubuntu → home → your_ubuntu_user_name. Or you can go there directly by typing into the Windows Explorer path bar: 
+
+```
+\\wsl$\Ubuntu\home\your_ubuntu_user_name
+```
+
+Practice accessing your Ubuntu and Windows home directories now, and make sure you can recognize which you are in. For advanced information, see [Microsoft’s guide to Windows and Linux file systems](https://docs.microsoft.com/en-us/windows/wsl/filesystems).
+
+We recommend storing your Python work in your Ubuntu home directory rather than your Windows home directory. By implication, Microsoft also recommends that in the guide linked above.
+
+At this point, you can run a bare-bones Ubuntu Unix terminal as an application within your WSL system. It's worth noting that as of this writing, WSL doesn't install any support for graphics of any kind including the graphical user interfaces (GUIs) that you're accustomed to.
+
+1. Install Python
+
+In Windows, navigate to python.org/downloads and install Python. Check the box related to the PATH and answer installation questions affirmatively. You can try it out from the Start icon.
+
+### 3. Set up your Work Area
 
 WSL has its own file system that is distinct from the Windows file system. You can edit Windows files from WSL, but you cannot edit WSL files from Windows. For more information about the differences between the Windows and WSL filesystems, and how to work with them, see [this guide](https://github.com/michaeltreat/Windows-Subsystem-For-Linux-Setup-Guide/blob/master/readmes/03_understanding_the_file_systems.md).
 
@@ -318,6 +319,7 @@ My Windows home directory is elsewhere, back to that in a minute.
 One can make a subdirectory of the current working directory using the *make directory* command `mkdir`. Let's make a directory to hold the materials in this course, type
 
 ```bash
+cd ~
 mkdir csci1100
 ```
 
@@ -333,7 +335,7 @@ will show that the directory `/home/muller` now contains one item, the subdirect
 cd csci1100
 ```
 
-> Pro tip: Instead of typing out all of the letters in `csci1100`, you can just type the first letter `c` and then hit the `tab` key and the command shell will finish it for you. A great time saver.
+> Pro tip: Instead of typing out all of the letters in `csci1100`, you can just type the first letter `c` and then hit the `tab` key and the command shell will finish it for you if it can. A great time saver.
 
 Now use the `pwd` command to confirm that the current working directory is `/home/muller/csci1100`. To be clear, the *home directory* is still `/home/muller`. If we want to "return" to our home directory, all 4 of these options will do it:
 
@@ -341,7 +343,7 @@ Now use the `pwd` command to confirm that the current working directory is `/hom
 1. cd /home/muller
 2. cd ~        # remember that ~ is an abbreviation for the file path /home/muller
 3. cd
-4. cd ..       # means set the current working directory to the parent directory, i.e., move up one level
+4. cd ..       # set the current working dir to the parent directory, i.e., move up a level
 ```
 
 Note that you can always move to the home directory for this course by typing `cd ~/csci1100`.
@@ -354,82 +356,38 @@ ln -s /mnt/c/Users/YOUR_WINDOWS_NAME/ windows    # NOTE THE SPACE!
  ```
 
 Now you can navigate to your Windows home directory from your Ubuntu command shell by typing `cd ~/windows` and to your course home directory by typing `cd ~/csci1100`.
-### 3. Set up the Basic OCaml Ecosystem
 
-The OCaml ecosystem has 3 major parts:
+**Introduce Yourself to git**
 
-1. A suite of compilers and interpreters implementing the OCaml programming language;
-2. A *package manager* called [opam](https://opam.ocaml.org/); this manages libraries of OCaml code.
-3. A *build manager* called [dune](https://dune.build/); this manages the compilation, linking and execution of OCaml code.
+Git and GitHub like to know a little bit about you.
 
-2. Install the OCaml package manager `opam`. [About 4 Minutes]
+```bash
+git config --global user.email "YOUR-EMAIL-ADDRESS"
+git config --global user.name "YOUR-NAME"
+```
 
-   ```bash
-   sudo add-apt-repository ppa:avsm/ppa
-   sudo apt-get update
-   sudo apt install opam
-   ```
+where "YOUR-EMAIL-ADDRESS" and "YOUR-NAME" are obviously yours. 
 
-   > Some of the above may indicate errors, but I found that ignoring the errors and completing the last line worked out.
+Now use the `git clone` command to install the course animation library
 
-3. Initialize the `opam` package manager:
+```bash
+cd ~/csci1100
+git clone https://github.com/BC-CSCI1100/lib.git
+```
 
-   ```bash
-   opam init --disable-sandboxing
-   ```
+ The git clone command will likely cause GitHub to ask you for your GitHub username and password. Heads up! It doesn't really want your password, it wants you personal access token that you made in PS0. If you have it, paste it into the password field. If you don't have it, no problem, make a new one and paste that one into the password field.
 
-   > **Heads up! The two quote marks in the `eval` command below are *backquotes* (upper left, below the `esc` key).**
+If the above steps don't work, see the instructor.
 
-   ```bash
-   eval `opam config env`
-   ```
+To finish up this part, stash the location of the course animation library away in Linux's PYTHONPATH environment variable.
 
-   Exit the Ubuntu shell and restart Ubuntu.
+    echo "export PYTHONPATH=\":$HOME/csci1100/lib/\"" >> ~/.bash_profile
 
-4. Installing and initializing opam also installs the OCaml compiler `ocamlc` and the OCaml interpreter `ocaml`. Fire up the interpreter by typing its name
-
-   ```bash
-   ocaml
-   ```
-
-   You should see something like this
-
-   ![a](./img/ocamlREPL.png)
-
-   > It's fine if you see OCaml version 4.8
-
-   Type in an arithmetic expression or two, each followed by two consecutive semicolons `;;`. Type `ctrl-d` to exit the interpreter.
-
-4. Now we'll retrieve some configuration tools from the course GitHub site.
-
-   ```bash
-   cd ~/csci1100
-   git clone https://github.com/BC-CSCI1100/setup.git
-   ```
-
-   > Pro tip: Typing the `ls` command will show you that you now have a directory called `setup`, but if you want to see what the directory contains, try the newly installed `tree` command. You should see something like
-   >
-   > <img src="./img/tree.png" width=600px>
-
-5. **Configure** [About 7 Minutes] Execute the course `configure` script to install several OCaml packages: `dune`, `merlin`, `animate`, etc. Type `Y` to accept the installation.
-
-   ```bash
-   cd ~/csci1100/setup
-   ./configure
-   ```
-
-6. Now test the basic installation. Use the `dune` build manager to compile and run the sample `hello` program as follows:
-
-7. ```bash
-   cd ~/csci1100/setup/test/hello/src
-   dune exec bin/main.exe
-   ```
-
-   If you see *"Hello World!"*, great! Press on. If you don't, something is amiss, contact a course staffer.
+X-out the present terminal window and fire up a new one.
 
 ### 4. Add Support for Graphical Programs
 
-The configuration developed so far is fine for running OCaml programs on WSL. But WSL doesn't provide support for graphical applications. In order to run graphical applications under WSL, we'll need to install a windowing system. We'll use the tried and true X-Windows system, aka *X11*,  (which isn't related to Microsoft Windows). In order to use it, we'll have to complete 2 steps:
+The configuration developed so far is fine for running Python programs on WSL. But WSL doesn't provide support for graphical applications. In order to run graphical applications, we'll need to install a windowing system. We'll use the tried and true X-Windows system, aka *X11*,  (which isn't related to Microsoft Windows). In order to use it, we'll have to complete 2 steps:
 
 1. Install *server* software for X-Windows, a so-called X-server;
 2. Configure our Unix command shell (i.e., bash) to tell graphical applications to use the newly installed X-server.
@@ -451,30 +409,46 @@ Having saved your `config.xlaunch` file in the `Startup` directory as shown, the
 
 #### Configure the Command Shell to use the X-server
 
-In an Ubuntu command shell, carefully type or cut and paste the following:
+Configure the Command Shell to use the X-server
+In an Ubuntu command shell, use the super-simple built-in nano editor to define a Unix environment variable essential to working with X-windows.
 
 ```bash
-cd
-echo "export DISPLAY=localhost:0.0" >> .bash_profile
-echo "eval $(opam env)" >> .bash_profile
-source .bash_profile
+nano ~/.bashrc
 ```
 
-These commands insert two command lines into your `.bash_profile` file in your Unix home directory. The commands in the `.bash_profile` file are executed every time you start up an Ubuntu command shell.
+Now carefully type, or better yet cut-and-paste the commands
+
+```bash
+export DISPLAY=$(awk '/nameserver / {print $2; exit}' /etc/resolv.conf 2>/dev/null):0.0
+source ~/.bashrc
+```
+
+The commands in the `.bashrc` file are executed every time you start up an Ubuntu command shell. The `export` command will look up the internet address that has been assigned dynamically (i.e., different every time) whenever WSL starts up. You should try to confirm that you got it right by showing the value of the DISPLAY variable. Typing
+
+```bash	
+echo $DISPLAY
+```
+
+
+should produce something shaped like `172.29.224.1:0.0`.
 
 #### Test a Graphical Application
 
 OK, are we good to go? Let's try a graphical application. Type
 
 ```bash
-cd ~/csci1100/setup/test/stopNgo/src
+cd ~/csci1100/lib/test/
 ```
 
-Now use the `dune` build manager to build and run the `stopNGo` program:
+Now run the `scroll.py` program:
 
 ```bash
-dune exec bin/main.exe
+python3 scroll.py
 ```
+
+You should see something like
+
+ <img src="./img/scroll.png" width=400>
 
 If you have trouble with any of the above steps, get in touch with course staff.
 
@@ -486,53 +460,36 @@ You made it this far, great job! The last step is to install Microsoft's **vscod
 code .
 ```
 
-meaning, fire up vscode and have it open the current working directory. This will start vscode from the command line, assuming that the `code` command is defined on Ubuntu's `PATH` environment variable. But there is a bit of a hitch in running vscode in this way. On installation, vscode has a checkbox offering to set the `PATH` variable. But in practice, it doesn't always set this variable as advertised. To correct this problem, we've provided a bash script called `patchVSCode`, we'll describe when and how to use it.
+meaning, fire up vscode and have it open the current working directory. This will start vscode from the command line, assuming that the `code` command is defined on Ubuntu's `PATH` environment variable.
 
-Fire up a browser in Windows and [install vscode for Windows](https://code.visualstudio.com/download). At the end of the installation, the installer offers to start vscode. Uncheck that box. If you miss this step and the installer starts vscode, exit vscode. In an Ubuntu shell type
-
-```bash
-cd ~/csci1100/setup
-git pull
-./patchVSCode YOUR_WINDOWS_USERNAME
-```
-
-Exit Ubuntu and restart it. Now type
+Fire up a browser in Windows and [install vscode for Windows](https://code.visualstudio.com/download).  Exit Ubuntu and reboot your system. Now typing
 
 ```bash
 which code
 ```
 
-This should return the path to the vscode program `/mnt/c/Users/.../Programs/Microsoft VS Code/bin`. If so, you're all set. Now fire up vscode in WSL.
+should return the path to the vscode program
+
+```bash
+/mnt/c/Users/YOUR_ACCOUNT_NAME/AppData/Local/Programs/Microsoft VS Code/bin/code
+```
+
+If so, you're all set. If not, get in touch with a staffer.
+
+Now fire up vscode in WSL.
 
 ```bash
 cd ~/csci1100/setup/test/hello/src
 code .
 ```
 
-We're now going to install several *Extensions* that customize vscode to work well with OCaml (Extensions are known as *Packages* in Atom). You can search for Extensions in vscode by selecting the blocky icon on the left.
+We're now going to install an vscode *Extension* that facilitates editing code in the WSL/Ubuntu file system. You can search for Extensions in vscode by selecting the blocky icon on the left.
 
 ![vscodeextensions](./img/vscodeblocky.png)
 
 Typing `@installed` in the search box at the top left lists all of the already-installed Extensions.
 
-When you fire up vscode, it will notice that you have enabled WSL so it will recommend that you install the **Remote - WSL** Extension. Install the following Extensions:
-
-1. Remote - WSL (from Microsoft, v 0.44.4 or better)
-2. Remote Development (from Microsoft, v 0.20.0 or better)
-3. OCaml and Reason IDE (from Darin Morrison, v 1.038 or better)
-4. Live Share (from Microsoft, v 1.02731 or better)
-
-Select the **Ocaml and Reason IDE** Extension, it should have a green button for **installing it on WSL**. It's important that you select that button. Navigate to the file `/bin/main.ml`. You should see something like
-
-![vscodeclean](./img/merlinclean.png)
-
-Note the annotations `OCaml` and `merlin` on the right in the blue bar on the bottom.
-
-Merlin is the wizard of errors. (!) If you introduce an error, say, by deleting the quotation mark at the end of line 8, you should see an orange squiggle below and a small red highlight bar on the right, as in
-
-![merlin](./img/merlin.png)
-
-This is an indication that merlin has detected a mistake. If you restore the correct code by reintroducing the quotation mark, the error annotations should disappear.
+When you fire up vscode, it will notice that you've enabled WSL so it will recommend that you install the **Remote - WSL** Extension. Install the Remote - WSL Extension then exit and restart the editor. At lower left, it should say WSL: Ubuntu in green. If it only has `><`, click on it "New WSL Window".
 
 ---
 
@@ -552,12 +509,12 @@ So no we have the development process:
    code .
    ```
 
-4. Write your OCaml code;
+4. Write your Python code;
 
-5. When your code seems worth testing (i.e., merlin isn't flagging errors) and you think it might be reasonable, use `dune` to build and run it:
+5. When your code seems worth testing and you think it might be reasonable, try running it:
 
    ```bash
-   dune exec bin/main.exe
+   python3 MYPROGRAM.PY
    ```
 
 6. If it works, great! For submission instructions, read on. If your code doesn't work, return the the editor...
@@ -577,25 +534,22 @@ cd ~/csci1100
 git clone https://github.com/BC-CSCI1100/ps-demo-dogfishbar.git
 ```
 
-Of course, rather than `ps-demo-dogfishbar.git`, the rightmost bit for you will have something like `ps1-smith.git` rather than `ps-demo-dogfishbar.git`. The `git clone` command  will cause the `git` and `GitHub` systems to make a local copy of your remote (master) repo. The repo for ps1 has four items:
+Of course, rather than `ps-demo-dogfishbar.git`, the rightmost bit for you will have something like `ps1-smith.git` rather than `ps-demo-dogfishbar.git`. The `git clone` command  will cause the `git` and `GitHub` systems to make a local copy of your remote (master) repo. The repo for ps1 has 3 items:
 
 1. a writeup in the form of this `README.md` file,
 2. a hidden `.gitignore` file,
-3. an `img/` folder containing the images shown above, and
-4. a `src/` folder for code. A `src/` folder will usually have a `dune-project` file and a `bin` directory. The `bin` directory will typically have OCaml "harness" code — code that isn't finished.
+4. a `src/` folder containing some harness code.
 
 The distributed source code should always compile and run. Type
 
 ```bash
 cd ~/csci1100/ps1-YOUR_GITHUB_ID/src/
-dune exec bin/main.exe
+python3 MYPROGRAM.PY
 ```
-
-The unix `dune` command builds (i.e., compiles and links) executable code. All of the projects for this course will be distributed with working `dune` files.
 
 ### Wrapping Up
 
-To review, you'll use the [atom](https://atom.io/) or [vscode](https://code.visualstudio.com/) text editor to develop your problem set solutions and you'll use `dune` to compile and test your work. As you work on your code, you should use Unix's `git` commands `git add` and `git commit` to commit your work to your local git repository periodically.
+To review, you'll use the [vscode](https://code.visualstudio.com/) text editor to develop your problem set solutions. As you work on your code, you should use Unix's `git` commands `git add` and `git commit` to commit your work to your local git repository periodically.
 
 When your code is working (and looks great!) you can submit it for grading using `git push` to transfer your local working repository to your master problem set repository on the Github course website.
 
