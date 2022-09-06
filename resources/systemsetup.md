@@ -273,7 +273,7 @@ You will be prompted for the Unix password you chose. The `sudo` runs the `apt` 
 Then install some useful packages that we'll need:
 
 ```bash
-sudo apt install -y zip tree python3-pip
+sudo apt install -y zip tree python3 python3-pip
 ```
 
 **File Systems**
@@ -381,7 +381,7 @@ If the above steps don't work, see the instructor.
 
 To finish up this part, stash the location of the course animation library away in Linux's PYTHONPATH environment variable.
 
-    echo "export PYTHONPATH=\":$HOME/csci1100/lib/\"" >> ~/.bash_profile
+    echo "export PYTHONPATH=\":$HOME/csci1100/lib/\"" >> ~/.bashrc
 
 X-out the present terminal window and fire up a new one.
 
