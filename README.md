@@ -51,11 +51,11 @@ Robert Muller — Boston College
 3. Applications
 
 #### Week by Week
-1. Logisitics; base types and expressions
-2. Naming; Writing Functions; Branching 
-3. Repetition; Graphics; Lists
-4. Repetition
-5. Repetition
+1. Overview and System Setup
+2. Working with the Command Line Interface
+3. Python: Basic types & Expressions, Libraries & Functions
+4. Working with Graphics
+5. Repetition & Lists
 6. Animation; Model-View-Update
 7. Digital Representations
 8. Machines
@@ -68,70 +68,68 @@ Robert Muller — Boston College
 
 </details>
 
-
-
 <details open>
   <summary>Details</summary>
 
 | Week | Mtng |     | Topic  |
 | :--: | :--: | :-- | :--------------------------------------- |
-|  [1](https://github.com/BC-CSCI1100/Week01)  |  L1   | M 08/29/22 | **First Meeting**; Overview |
-|      |       | T 08/30/22 | Setting Up |
-|      |       | W 08/31/22 |  |
-|      |       | R 09/01/22 | |
-|  2  |   | M 09/05/22 | **No Meeting** |
-|      |        | T 09/06/22 |  |
-|      |        | W 09/07/22 |  |
-|      |        | R 09/08/22 | **No Meeting** |
-|  3  |   | M 09/12/22 |  |
-|      |        | T 09/13/22 |  |
-|      |        | W 09/14/22 |  |
-|      |        | R 09/15/22 | |
-|  4  |   | M 09/19/22 |  |
+|  [1](https://github.com/BC-CSCI1100/Week01)  |  L1   | M 08/29/22 | **First Meeting**; Course Overview |
+|      |       | T 08/30/22 | System Setup |
+|      |       | W 08/31/22 | Cancelled |
+|      |       | R 09/01/22 | git Repositories |
+|  [2](https://github.com/BC-CSCI1100/Week02)  |   | M 09/05/22 | **No Meeting** |
+|      |        | T 09/06/22 | Set up Walk Through |
+|      |        | W 09/07/22 | Working with the Unix Command Line |
+|      |        | R 09/08/22 | Individual Setup Meetings |
+|  [3](https://github.com/BC-CSCI1100/Week03)  |   | M 09/12/22 | Python: Basic Types & Expressions |
+|      |        | T 09/13/22 | Workshop: Defining Functions |
+|      |        | W 09/14/22 | Python: Branching & Repetition |
+|      |        | R 09/15/22 | Workshop: Defining Functions |
+|  4  |   | M 09/19/22 | Working with Graphics  |
 |      |        | T 09/20/22 |  |
 |      |        | W 09/21/22 |  |
 |      |        | R 09/22/22 | |
-|  5  |   | M 09/26/22 |  |
+|  5  |   | M 09/26/22 | Repetition and Lists |
 |      |        | T 09/27/22 |  |
 |      |        | W 09/28/22 |  |
 |      |        | R 09/29/22 | |
-|  6  |   | M 10/03/22 |  |
+|  6  |   | M 10/03/22 | Animation; Model-View-Update |
 |      |        | T 10/04/22 |  |
 |      |        | W 10/05/22 |  |
 |      |        | R 10/06/22 | |
 |  7  |   | M 10/10/22 | **No Meeting** |
-|      |        | T 10/11/22 |  |
+|      |        | T 10/11/22 | More Animation |
 |      |        | W 10/12/22 |  |
 |      |        | R 10/13/22 | |
-|  8  |   | M 10/17/22 |  |
+|  8  |   | M 10/17/22 | Digital Representations |
 |      |        | T 10/18/22 |  |
 |      |        | W 10/19/22 |  |
 |      |        | R 10/20/22 | |
-|  9  |   | M 10/24/22 |  |
+|  9  |   | M 10/24/22 | Machines |
 |      |        | T 10/25/22 |  |
 |      |        | W 10/26/22 |  |
 |      |        | R 10/27/22 | |
-|  10  |   | M 10/31/22 |  |
+|  10  |   | M 10/31/22 | Machines |
 |      |        | T 11/01/22 |  |
 |      |        | W 11/02/22 |  |
 |      |        | R 11/03/22 | |
-|  11  |   | M 11/07/22 |  |
+|  11  |   | M 11/07/22 | Storage & Storage Diagrams |
 |      |        | T 11/08/22 |  |
 |      |        | W 11/09/22 |  |
 |      |        | R 11/10/22 | |
-|  12  |   | M 11/14/22 |  |
+|  12  |   | M 11/14/22 | Working with Arrays |
 |      |        | T 11/15/22 |  |
 |      |        | W 11/16/22 |  |
 |      |        | R 11/17/22 | |
-|  13  |   | M 11/21/22 |  |
+|  13  |   | M 11/21/22 | Working with Strings, Text & Files |
 |      |        | T 11/22/22 |  |
 |      |        | W 11/23/22 |  |
 |      |        | R 11/24/22 | **No Meeting** |
-|  14  |   | M 11/28/22 |  |
+|  14  |   | M 11/28/22 | More Work with Files |
 |      |        | T 11/29/22 |  |
 |      |        | W 11/30/22 |  |
 |      |        | R 12/1/22 | |
-|  15  |   | M 12/2/22 |  |
+|  15  |   | M 12/2/22 | Catch Up|
 |      |        | T 12/3/22 |  |
 |      |        | W 12/07/22 |  |
 |      |        | R 12/08/22 | **Last Meeting** |
