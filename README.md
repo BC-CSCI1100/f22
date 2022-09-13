@@ -75,10 +75,10 @@ Robert Muller — Boston College
 | :--: | :--: | :-- | :--------------------------------------- |
 |  [1](https://github.com/BC-CSCI1100/Week01)  |  L1   | M 08/29/22 | **First Meeting**; Course Overview |
 |      |       | T 08/30/22 | System Setup |
-|      |       | W 08/31/22 | Cancelled |
-|      |       | R 09/01/22 | git Repositories |
+|      |       | W 08/31/22 | Metting Cancelled, covid issues |
+|      |       | R 09/01/22 | System Setup: git Repositories |
 |  [2](https://github.com/BC-CSCI1100/Week02)  |   | M 09/05/22 | **No Meeting** |
-|      |        | T 09/06/22 | Set up Walk Through |
+|      |        | T 09/06/22 | Setup Walk Through |
 |      |        | W 09/07/22 | Working with the Unix Command Line |
 |      |        | R 09/08/22 | Individual Setup Meetings |
 |  [3](https://github.com/BC-CSCI1100/Week03)  |   | M 09/12/22 | Python: Basic Types & Expressions |
@@ -86,9 +86,9 @@ Robert Muller — Boston College
 |      |        | W 09/14/22 | Python: Branching & Repetition |
 |      |        | R 09/15/22 | Workshop: Defining Functions |
 |  4  |   | M 09/19/22 | Working with Graphics  |
-|      |        | T 09/20/22 |  |
-|      |        | W 09/21/22 |  |
-|      |        | R 09/22/22 | |
+|      |        | T 09/20/22 | Workshop: Graphics |
+|      |        | W 09/21/22 | More on Graphics |
+|      |        | R 09/22/22 | Workshop: More Graphics |
 |  5  |   | M 09/26/22 | Repetition and Lists |
 |      |        | T 09/27/22 |  |
 |      |        | W 09/28/22 |  |
