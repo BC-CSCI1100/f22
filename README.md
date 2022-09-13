@@ -77,7 +77,7 @@ Robert Muller — Boston College
 |      |       | T 08/30/22 | System Setup |
 |      |       | W 08/31/22 | Metting Cancelled, covid issues |
 |      |       | R 09/01/22 | System Setup: git Repositories |
-|  [2](https://github.com/BC-CSCI1100/Week02)  |   | M 09/05/22 | **No Meeting** |
+|  [2](https://github.com/BC-CSCI1100/Week02)  |   | M 09/05/22 | **Labor Day No Meeting** |
 |      |        | T 09/06/22 | Setup Walk Through |
 |      |        | W 09/07/22 | Working with the Unix Command Line |
 |      |        | R 09/08/22 | Individual Setup Meetings |
