@@ -57,14 +57,15 @@ Robert Muller — Boston College
 4. Working with Graphics
 5. Repetition & Lists
 6. Animation; Model-View-Update
-7. Digital Representations
-8. Machines
-9. Storage
-10. Applications in Imperative Style: Digital Audio
-11. Applications in Imperative Style: Digital Images
-12. Applications of Strings, Text & Files
-13. Sorting Algorithms
-14. Developing new Types, Review & Wrap-up
+7. More Animation
+8. Numeral Systems & Digital Representations
+9. Machines
+10. Machines
+11. Storage & Storage Diagrams
+12. Working with Arrays
+13. Working with 2-dimensional Arrays
+14. Applications of Strings, Text & Files
+15. Catching Up
 
 </details>
 
@@ -101,7 +102,7 @@ Robert Muller — Boston College
 |      |        | T 10/11/22 | More Animation |
 |      |        | W 10/12/22 |  |
 |      |        | R 10/13/22 | |
-|  8  |   | M 10/17/22 | Digital Representations |
+|  8  |   | M 10/17/22 | Numeral Systems & Digital Representations |
 |      |        | T 10/18/22 |  |
 |      |        | W 10/19/22 |  |
 |      |        | R 10/20/22 | |
@@ -121,15 +122,15 @@ Robert Muller — Boston College
 |      |        | T 11/15/22 |  |
 |      |        | W 11/16/22 |  |
 |      |        | R 11/17/22 | |
-|  13  |   | M 11/21/22 | Working with Strings, Text & Files |
+|  13  |   | M 11/21/22 | Working with 2-dimensional Arrays |
 |      |        | T 11/22/22 |  |
 |      |        | W 11/23/22 |  |
 |      |        | R 11/24/22 | **No Meeting** |
-|  14  |   | M 11/28/22 | More Work with Files |
+|  14  |   | M 11/28/22 | Working with Strings, Text & Files |
 |      |        | T 11/29/22 |  |
 |      |        | W 11/30/22 |  |
 |      |        | R 12/1/22 | |
-|  15  |   | M 12/2/22 | Catch Up|
+|  15  |   | M 12/2/22 | Catching Up|
 |      |        | T 12/3/22 |  |
 |      |        | W 12/07/22 |  |
 |      |        | R 12/08/22 | **Last Meeting** |
