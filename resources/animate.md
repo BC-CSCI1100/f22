@@ -169,21 +169,21 @@ Of course, it isn't too hard to make a labeled tile, or even a sequence of such 
 The animation library includes 5 functions for working with [Portable Network Graphic](https://en.wikipedia.org/wiki/Portable_Network_Graphics) images.
 
 ```python
-Animate.show : filepath -> unit
-Animate.read : filepath -> image
-Animate.dimensions : image -> (int * int)
-Animate.toArray : image -> 2D array
-Animate.fromArray : 2D array -> image
+Image.show : filepath -> unit
+Image.read : filepath -> image
+Image.dimensions : image -> (int * int)
+Image.toArray : image -> 2D array
+Image.fromArray : 2D array -> image
 ```
 
-The `Animate.show` function reads a PNG from a file and places it on the display. A program using `Animate.show` might receive the name of the file from the command line as in the following code.
+The `Image.show` function reads a PNG from a file and places it on the display. A program using `Image.show` might receive the name of the file from the command line as in the following code.
 
 ```python
 from animate import *
 
 def go():
     if len(sys.argv) == 2:
-        Animate.show(sys.argv[1])
+        Image.show(sys.argv[1])
     else:
         print("run: python3 pngShow.py pngfile")
         sys.exit()
@@ -266,7 +266,7 @@ rate=defaultFPS                 # default is 30 frames per second
 
 So `Animate.start` can be called with no explicit arguments as in `Animate.start()` using the default values for all 11 of the parameters or `Animate.start` might be called with a few explicit arguments as in `Animate.start(model=12, height=600)` or `Animate.start` might be called with all 11 arguments explicitly provided, overriding all of the defaults.
 
-**The Inputs to `Animate.Start`**
+**The Inputs to `Animate.start`**
 
 - The `model` input is the starter value of the model. This value is threaded through the `Animate.start` loop;
 
