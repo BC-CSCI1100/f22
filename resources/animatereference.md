@@ -39,14 +39,14 @@ Image
 ```python
 Animate
   start :
-  model=None,
-  width=800,
-  height=800,
-  view=defaultView,               # model -> Image
-  tickUpdate=defaultTickUpdate,   # model -> model
-  touchUpdate=defaultTouchUpdate, # model * x * y * Touch.UP/Touch.Down -> model
-  keyUpdate=defaultKeyUpdate,     # model * keyname -> model
-  stopWhen=defaultStopWhen,       # model -> boolean
-  viewLast=defaultViewLast,       # model -> Image
-  -> unit
+    model=None,
+    width=800,
+    height=800,
+    view=defaultView,               # model -> Image
+    tickUpdate=defaultTickUpdate,   # model -> model
+    touchUpdate=defaultTouchUpdate, # model * x * y * Touch.UP/Touch.Down -> model
+    keyUpdate=defaultKeyUpdate,     # model * keyname -> model
+    stopWhen=defaultStopWhen,       # model -> boolean
+    viewLast=defaultViewLast,       # model -> Image
+    -> unit
 ```
