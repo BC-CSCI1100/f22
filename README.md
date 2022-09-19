@@ -8,7 +8,7 @@ Robert Muller — Boston College
 
 [About](resources/about.md) — [Textbooks](resources/textbooks.md) — [Grading](resources/grading.md) — [Canvas](https://bostoncollege.instructure.com/courses/1634507) — [Piazza](https://piazza.com/class/l7ca109sok15ag) — [SVM](https://dogfishbar.github.io/dogfishbar.github.io/)
 
-[Standard Library](https://docs.python.org/3/library/index.html) — [Lib]() — [Animate]() — [Image]() — [Color]() — [Animate Notes]()
+[Standard Library](https://docs.python.org/3/library/index.html) — [Animate](./resources/animate.md) — [Animate Ref](./resources/animatereference.md) 
 
 ---
 
