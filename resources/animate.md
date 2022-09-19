@@ -246,7 +246,7 @@ def start(model, view, update, finished, viewLast):
   display(finalImage)
 ```
 
-Note that `view`, `update`, `finished` and `viewLast` are all functions accepting a model and returning some result. (The `update` function shown is a stand-in for 3 different update functions discussed below.)
+Note that `view`, `update`, `finished` and `viewLast` are all functions accepting a model and returning some result. (The `update` function shown in the above pseudo-code is a stand-in for 3 different update functions discussed below.)
 
 Though the pseudo-code version of `start` shown above accepts only 5 inputs (i.e., `model`, `view`, `update`, `finished` and `viewLast`), the actual `Animate.start` functions accepts 11 inputs. Each input is optional -- all 11 have default values.
 
