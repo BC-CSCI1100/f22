@@ -18,22 +18,22 @@ Color
     
 ```pyton
 Image
-    circle : radius, color, lineWidth=0 -> image
-    line : points, color, lineWidth=1 -> image
-    polygon : points, color, lineWidth=0 -> image
+    circle    : radius, color, lineWidth=0 -> image
+    line      : points, color, lineWidth=1 -> image
+    polygon   : points, color, lineWidth=0 -> image
     rectangle : width, height, color, lineWidth=0 -> image
-    empty : width, height, color -> image
-    text : string, color, size=FONTSIZE -> image
+    empty     : width, height, color -> image
+    text      : string, color, size=FONTSIZE -> image
     
-    placeImage : top, xy, bottom -> image
+    placeImage  : top, xy, bottom -> image
     placeImages : tops, xys, bottom -> image 
     
   PNGs
     read : path -> image
     show : path -> unit
     dimensions : image -> (width, height)
-    toArray : image -> 2D-array
-    fromArray : 2D-array -> image
+    toArray    : image -> 2D-array
+    fromArray  : 2D-array -> image
 ```
 
 ```python
