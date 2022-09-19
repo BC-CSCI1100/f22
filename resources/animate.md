@@ -6,47 +6,6 @@
 
 ## An Animation Library for Python
 
----
-```
-COLOR
-    def make(red, green, blue, alpha=255):
-    def red(color):   return color.r
-    def green(color): return color.g
-    def blue(color):  return color.b
-    def alpha(color): return color.a
-    def random():
-    
-IMAGE
-    def circle(radius, color, lineWidth=0):
-    def line(points, color, lineWidth=0):
-    def polygon(points, color, lineWidth=0):
-    def rectangle(width, height, color, lineWidth=0):
-    def empty(width, height, color):
-    def text(string, color, size=FONTSIZE):
-    
-    def placeImage(top, xy, bottom):
-    def placeImages(tops, xys, bottom):
-    
-  PNGs
-    def read(path):
-    def show(path):
-    def dimensions(image):
-    def toArray(image):
-    def fromArray(a):
-
-ANIMATE
-    def start(model=None,
-              width=defaultWidth,
-              height=defaultHeight,
-              view=defaultView,               # model -> Image
-              tickUpdate=defaultTickUpdate,   # model -> model
-              touchUpdate=defaultTouchUpdate, # model * x * y * UP/DOWN -> model
-              keyUpdate=defaultKeyUpdate,     # model * keyname -> model
-              stopWhen=defaultStopWhen,       # model -> boolean
-              viewLast=defaultViewLast,       # model -> Image
-    
-```
----
 ### Getting Started
 
 In CSCI 1100, we'll be using a non-standard library supporting simple graphics and animation. The library, called `Animate` is a simplified version of the [Universe](http://www.is.ocha.ac.jp/~asai/Universe/en/), library which was developed by Kenichi Asai and Chihiro Uehara. (And the Universe library was based on a similar library for the programming language Racket.)
