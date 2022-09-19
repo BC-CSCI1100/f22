@@ -9,11 +9,12 @@
 ```python
 Color
     make   : red, green, blue, alpha=255 -> color
+    random : unit -> color
+
     red    : color -> int
     green  : color -> int
     blue   : color -> int
     alpha  : color -> int
-    random : unit -> color
 ```
     
 ```pyton
