@@ -238,10 +238,10 @@ Roughly speaking, the `Animate.start` function accepts several inputs and then l
 ```python
 def start(model, view, update, finished, viewLast):
   while not(finished(model)):
-		image = view(model)
-  	display(image)                   # Renders the image on the display
-  	model = update(model)            # Animate actually has 3 different update functions
-  
+    image = view(model)
+    display(image)                   # Renders the image on the display
+    model = update(model)            # Animate actually has 3 different update functions
+
   finalImage = viewLast(model)
   display(finalImage)
 ```
