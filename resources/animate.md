@@ -280,7 +280,7 @@ So `Animate.start` can be called with no explicit arguments as in `Animate.start
 
 - The `tickUpdate` input is a function of type `model -> model`. It is called for clock-tick events;
 
-- The `touchUpdate` input is a function of type  `model * x * y * event -> model`. It is called whenever a touch event occurs on the touchpad. The `touchUpdate` function accepts a model, the (x, y) coordinates of the touchpad event and a value specifying the kind of event --  either **`Touch.Up`** or **`Touch.Down`**. From these inputs the `touchUpdate` function produces a new model. 
+- The `touchUpdate` input is a function of type  `model * (x * y) * event -> model`. It is called whenever a touch event occurs on the touchpad. The `touchUpdate` function accepts a model, the (x, y) coordinates of the touchpad event and a value specifying the kind of event --  either **`Touch.Up`** or **`Touch.Down`**. From these inputs the `touchUpdate` function produces a new model. 
 
   It's common to use touch events to change the *state* of the application. An application may start in a *State.Ready* state and transition to a *State.Running* state on a `Touch.Up` event. 
 
