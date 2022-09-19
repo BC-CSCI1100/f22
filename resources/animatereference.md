@@ -6,7 +6,10 @@
 
 ## Brief Reference for an Animation Library for Python
 
-The animation library is implemented in file **animate.py**. This file is assumed to be in the local python `site-packages` directory or in a directory on the search path `PYTHONPATH`. The animation library depends on [pygame](https://www.pygame.org/) and on [numpy](https://numpy.org/). Both of these packages can be installed using `pip3`.
+The animation library is implemented in file **animate.py**. This file is assumed to be in the local python `site-packages` directory or in a directory on the search path `PYTHONPATH`. The animation library depends on Python packages [pygame](https://www.pygame.org/) and [numpy](https://numpy.org/). These packages can be installed using `pip3`.
+```bash
+pip3 install pygame numpy
+```
 
 Import the animation library with `from animate import *`. Then the functions can be referenced as in `Color.make`, `Image.polygon`, `Animate.start` etc.
 
