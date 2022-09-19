@@ -6,6 +6,8 @@
 
 ## Brief Reference for an Animation Library for Python
 
+Import the animation library with `from animate import *`. Then the functions can be referenced as in `Color.make`, `Image.polygon`, `Animate.start` etc.
+
 ```python
 Color
     make   : red, green, blue, alpha=255 -> color
