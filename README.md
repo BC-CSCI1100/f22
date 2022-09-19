@@ -86,7 +86,7 @@ Robert Muller — Boston College
 |      |        | T 09/13/22 | Workshop: Defining Functions |
 |      |        | W 09/14/22 | Python: Branching & Repetition |
 |      |        | R 09/15/22 | Workshop: Defining Functions |
-|  4  |   | M 09/19/22 | Working with Graphics  |
+|  [4](https://github.com/BC-CSCI1100/Week04)  |   | M 09/19/22 | Working with Graphics  |
 |      |        | T 09/20/22 | Workshop: Graphics |
 |      |        | W 09/21/22 | More on Graphics |
 |      |        | R 09/22/22 | Workshop: More Graphics |
