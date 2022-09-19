@@ -52,25 +52,6 @@ Color.alpha : color -> int
 
 When all of red, green and blue are 0, the color is black. When they're all 255 the color is white. And more generally, any color with equal levels of red, green and blue provides a shade of gray.
 
-
-
-
-```python
-model=None,
-title="CSCI 1100",
-width=WIDTH,
-height=HEIGHT,
-view=defaultView,               # model -> Image
-tickUpdate=defaultTickUpdate,   # model -> model
-touchUpdate=defaultTouchUpdate, # model * x * y * UP/DOWN -> model
-keyUpdate=defaultKeyUpdate,     # model * keyname -> model
-stopWhen=defaultStopWhen,       # model -> boolean
-viewLast=defaultViewLast,       # model -> Image
-rate=FPS
-```
-
-
-
 ### Images
 
 The **Image** library has several functions for creating images that can be placed on the display. 
