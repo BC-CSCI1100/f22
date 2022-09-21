@@ -4,11 +4,11 @@
 
 ---
 
-## An Animation Library for Python
+## A Simple Animation Library for Python
 
 ### Getting Started
 
-In CSCI 1100, we'll be using a non-standard library supporting simple graphics and animation. The library, called `Animate` is a simplified version of the [Universe](http://www.is.ocha.ac.jp/~asai/Universe/en/), library which was developed by Kenichi Asai and Chihiro Uehara. (And the Universe library was based on a similar library for the programming language Racket.)
+In CSCI 1100 we'll be using a non-standard library supporting graphics and animation. The library, called `Animate`, is a simplified version of the [Universe](http://www.is.ocha.ac.jp/~asai/Universe/en/), library which was developed for OCaml by Kenichi Asai and Chihiro Uehara. (And the Universe library was based on a similar library for the programming language Racket.)
 
 This document gives a brief overview of the Animate library. The library contains 3 main parts: 1. `Animate`, 2. `Image` and 3. `Color`.
 
@@ -248,7 +248,7 @@ def start(model, view, update, finished, viewLast):
 
 Note that `view`, `update`, `finished` and `viewLast` are all functions accepting a model and returning some result. (The `update` function shown in the above pseudo-code is a stand-in for 3 different update functions discussed below.)
 
-Though the pseudo-code version of `start` shown above accepts only 5 inputs (i.e., `model`, `view`, `update`, `finished` and `viewLast`), the actual `Animate.start` functions accepts 11 inputs. Each input is optional -- all 11 have default values.
+Though the pseudo-code version of `start` shown above shows only 5 inputs (i.e., `model`, `view`, `update`, `finished` and `viewLast`), the actual `Animate.start` functions accepts 11 inputs. Each input is optional -- all 11 have default values.
 
 ```python
 model=None
@@ -289,4 +289,134 @@ So `Animate.start` can be called with no explicit arguments as in `Animate.start
 - The `stopWhen` input is a function of type `model -> bool`. It is called each time through the loop with the model as input. It returns a boolean. If it returns `true` `Animate.start` will call the `viewLast : model -> image` function and terminate the loop.
 
 - The `viewLast` input is function of type `model -> image`. It operates just like `view` but it is called only once, when the animation is ready to terminate.
+
+### Working with Models
+
+What is a model? Roughly speaking, a model is a Python *value* representing the state of the application. For simple applications such as the display of a fixed image of some kind, there is no meaningful application state so the model might as well be the built-in Python value `None`. For an application moving an image horizontally across the display, the model might be a single integer value representing the x-coordinate of the image's pin-point. The x-coordinate would increase in the course of running the application. If the application is a game of chess, the model will no doubt be a Python value with several parts, at least one of which might be a 2D-array representing the current state of the chess board.
+
+Whatever type might be chosen for a model for a given application, the functions working with the model, e.g., `view`, `tickUpdate` etc, must all agree on the chosen type. It won't do to have `view` written in a way that treats the model as an integer while `tickUpdate` treats the model as a tuple.
+
+#### Two Variations of a Simple Animation
+
+We're now going to show two implementations of the simple animation mentioned above --- a text image scrolling horizontally across the display. The application will pause when the touchpad is touched and resume when the touchpad is touched again. The first implementation is simple but it isn't written in a way that conforms with good software practice. The second implementation introduces a tool to improve the application code. There is a little overhead involved with introducing the tool (and in Python some if it is a little unsightly) but the tool nevertheless leads to better engineered software.
+
+The state of the application has 2 parts: 1. an indicator of whether or not the animation is paused or running and 2. the changing x-coordinate of the pin-hole.
+
+##### Naive Version
+
+We'll use a boolean for the paused/running indicator and an integer for the changing x-coordinate. The whole animation state can be represented as a pair `(paused, x)`.
+
+```python
+# CSCI 1100 Gateway to Computer Science                                                                                
+#                                                                                                                      
+# This program scrolls text from left to right. The touchpad starts & stops the animation.                                                          # This program is NOT RECOMMENDED because it uses a less favorable representation of 
+# the animation state.
+#                                                                                                                      
+# run: python3 scroll1.py                                                                                             
+
+from animate import *
+
+# toggle : state -> state                                                                                              
+def toggle(state):
+    return not(state)
+
+# view : model -> image                                                                                                
+def view(model):
+    (paused, x) = model
+    backing = Image.rectangle(WIDTH, HEIGHT, Color.Red)
+    text    = Image.text("Gateway", Color.White, size=100)
+    return Image.placeImage(text, (x, 325), backing)
+
+# tickUpdate : model -> model                                                                                          
+def tickUpdate(model):
+    (paused, x) = model
+    if paused:
+        return model
+    else:
+        return (paused, x + 3 if x < WIDTH else -400)
+
+# touchUpdate : model * (x, y) * event -> model                                                                        
+def touchUpdate(model, xy, event):
+    (paused, x) = model
+    if event == Touch.Up:
+        return (toggle(paused), x)
+    else:
+        return model
+
+# finished : model -> boolean                                                                                          
+def finished(model):
+    return False
+
+initialModel = (True, 0)
+
+Animate.start(model=initialModel,
+              view=view,               # model -> image                                                                
+              tickUpdate=tickUpdate,   # model -> model                                                                
+              touchUpdate=touchUpdate, # model * (x, y) * event -> model                                               
+              stopWhen=finished)       # model -> boolean               
+```
+
+##### Better Version
+
+More complex animations have more complex states so it's especially useful to have fixed symbolic names for the various parts of the state. Rather than using something like a tuple together with pattern matching to retrieve the parts of the model `(paused, x) = model` it's better practice to refer to the various parts of the model using fixed symbolic names together with dot-notation as in `model.paused` and `model.x`. In Python this can be achieved by representing the model as a value created by a `class` form. The syntax of class definition and initialization is awkward in Python, but in a larger program the cost paid is far outweighed by the benefits gained.
+
+> If you're familiar with "object-oriented programming", the use of Python's `class` form here may suggest that this is somehow an "object-oriented" approach. The technique recommended here has nothing at all to do with object-oriented programming -- the value created by the `class` form is used only as a simple record or `struct`. 
+
+```python
+# CSCI 1100 Gateway to Computer Science
+#
+# This program scrolls text from left to right. The touchpad starts & stops the animation.
+# This program is preferable to the one above -- it uses a better model representation.
+#
+# run: python3 scroll.py
+
+from animate import *
+
+# toggle : state -> state                                                        
+def toggle(state):
+    return not(state)
+
+# Use a Python class to define a record structure with two named fields.
+class Model():
+    def __init__(self, paused=True, x=0):
+        self.paused = paused
+        self.x = x
+
+# view : model -> image                                                                                                                
+def view(model):
+    backing = Image.rectangle(WIDTH, HEIGHT, Color.Red)
+    text    = Image.text("Gateway", Color.White, size=100)
+    return Image.placeImage(text, (model.x, 325), backing)
+
+# tickUpdate : model -> model                                                                                                          
+def tickUpdate(model):
+    if model.paused:
+        return model
+    else:
+        newX = model.x + 3 if model.x < WIDTH else -400
+        return Model(paused=model.paused, x=newX)
+
+# touchUpdate : model * (x, y) * event -> model                                                                                        
+def touchUpdate(model, xy, event):
+    if event == Touch.Up:
+        return Model(paused=toggle(model.paused), x=model.x)
+    else:
+        return model
+
+# finished : model -> boolean                                                                                                          
+def finished(model):
+    return False
+
+initialModel = Model(paused=True, x=0)
+
+Animate.start(model=initialModel,
+              view=view,               # model -> image
+              tickUpdate=tickUpdate,   # model -> model
+              touchUpdate=touchUpdate, # model * (x, y) * event -> model
+              stopWhen=finished)       # model -> boolean
+```
+
+
+
+
 
