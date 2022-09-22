@@ -8,9 +8,11 @@
 
 ### Getting Started
 
-In CSCI 1100 we'll be using a non-standard library supporting graphics and animation. The library, called `Animate`, is a simplified version of the [Universe](http://www.is.ocha.ac.jp/~asai/Universe/en/), library which was developed for OCaml by Kenichi Asai and Chihiro Uehara. (And the Universe library was based on a similar library for the programming language Racket.)
+This repository contains an implementation of a simple model-view-update (MVU) library supporting graphics and animation. The library, called `Animate`, is a simplified version of the [Universe](http://www.is.ocha.ac.jp/~asai/Universe/en/), library which was developed for OCaml by Kenichi Asai and Chihiro Uehara. (And the Universe library was based on a similar library for the programming language Racket.)
 
 This document gives a brief overview of the Animate library. The library contains 3 main parts: 1. `Animate`, 2. `Image` and 3. `Color`.
+
+Some system setup notes can be found at the bottom of this document.
 
 ### The Graphics Display
 
@@ -307,27 +309,28 @@ The state of the application has 2 parts: 1. an indicator of whether or not the 
 We'll use a boolean for the paused/running indicator and an integer for the changing x-coordinate. The whole animation state can be represented as a pair `(paused, x)`.
 
 ```python
-# CSCI 1100 Gateway to Computer Science                                                                                
-#                                                                                                                      
-# This program scrolls text from left to right. The touchpad starts & stops the animation.                                                          # This program is NOT RECOMMENDED because it uses a less favorable representation of 
+# CSCI 1100 Gateway to Computer Science
+#
+# This program scrolls text from left to right. The touchpad starts & stops the animation.
+# This program is NOT RECOMMENDED because it uses a less favorable representation of
 # the animation state.
-#                                                                                                                      
-# run: python3 scroll1.py                                                                                             
+#
+# run: python3 scroll1.py
 
 from animate import *
 
-# toggle : state -> state                                                                                              
+# toggle : state -> state
 def toggle(state):
     return not(state)
 
-# view : model -> image                                                                                                
+# view : model -> image
 def view(model):
     (paused, x) = model
     backing = Image.rectangle(WIDTH, HEIGHT, Color.Red)
     text    = Image.text("Gateway", Color.White, size=100)
     return Image.placeImage(text, (x, 325), backing)
 
-# tickUpdate : model -> model                                                                                          
+# tickUpdate : model -> model
 def tickUpdate(model):
     (paused, x) = model
     if paused:
@@ -335,7 +338,7 @@ def tickUpdate(model):
     else:
         return (paused, x + 3 if x < WIDTH else -400)
 
-# touchUpdate : model * (x, y) * event -> model                                                                        
+# touchUpdate : model * (x, y) * event -> model
 def touchUpdate(model, xy, event):
     (paused, x) = model
     if event == Touch.Up:
@@ -343,24 +346,24 @@ def touchUpdate(model, xy, event):
     else:
         return model
 
-# finished : model -> boolean                                                                                          
+# finished : model -> boolean
 def finished(model):
     return False
 
 initialModel = (True, 0)
 
 Animate.start(model=initialModel,
-              view=view,               # model -> image                                                                
-              tickUpdate=tickUpdate,   # model -> model                                                                
-              touchUpdate=touchUpdate, # model * (x, y) * event -> model                                               
-              stopWhen=finished)       # model -> boolean               
+              view=view,               # model -> image
+              tickUpdate=tickUpdate,   # model -> model
+              touchUpdate=touchUpdate, # model * (x, y) * event -> model
+              stopWhen=finished)       # model -> boolean
 ```
 
 ##### Better Version
 
 More complex animations have more complex states so it's especially useful to have fixed symbolic names for the various parts of the state. Rather than using something like a tuple together with pattern matching to retrieve the parts of the model `(paused, x) = model` it's better practice to refer to the various parts of the model using fixed symbolic names together with dot-notation as in `model.paused` and `model.x`. In Python this can be achieved by representing the model as a value created by a `class` form. The syntax of class definition and initialization is awkward in Python, but in a larger program the cost paid is far outweighed by the benefits gained.
 
-> If you're familiar with "object-oriented programming", the use of Python's `class` form here may suggest that this is somehow an "object-oriented" approach. The technique recommended here has nothing at all to do with object-oriented programming -- the value created by the `class` form is used only as a simple record or `struct`. 
+> If you're familiar with "object-oriented programming", the use of Python's `class` form here may suggest that this is somehow an "object-oriented" approach. The technique recommended here has nothing at all to do with object-oriented programming -- the value created by the `class` form is used only as a simple record or `struct`.
 
 ```python
 # CSCI 1100 Gateway to Computer Science
@@ -372,7 +375,7 @@ More complex animations have more complex states so it's especially useful to ha
 
 from animate import *
 
-# toggle : state -> state                                                        
+# toggle : state -> state
 def toggle(state):
     return not(state)
 
@@ -382,13 +385,13 @@ class Model():
         self.paused = paused
         self.x = x
 
-# view : model -> image                                                                                                                
+# view : model -> image
 def view(model):
     backing = Image.rectangle(WIDTH, HEIGHT, Color.Red)
     text    = Image.text("Gateway", Color.White, size=100)
     return Image.placeImage(text, (model.x, 325), backing)
 
-# tickUpdate : model -> model                                                                                                          
+# tickUpdate : model -> model
 def tickUpdate(model):
     if model.paused:
         return model
@@ -396,14 +399,14 @@ def tickUpdate(model):
         newX = model.x + 3 if model.x < WIDTH else -400
         return Model(paused=model.paused, x=newX)
 
-# touchUpdate : model * (x, y) * event -> model                                                                                        
+# touchUpdate : model * (x, y) * event -> model
 def touchUpdate(model, xy, event):
     if event == Touch.Up:
         return Model(paused=toggle(model.paused), x=model.x)
     else:
         return model
 
-# finished : model -> boolean                                                                                                          
+# finished : model -> boolean
 def finished(model):
     return False
 
@@ -415,6 +418,31 @@ Animate.start(model=initialModel,
               touchUpdate=touchUpdate, # model * (x, y) * event -> model
               stopWhen=finished)       # model -> boolean
 ```
+
+#### System Setup Notes
+
+In order to use the Animate library this repository should be placed in either the Python `site-packages` directory on your system or it should be placed in a directory that is included in your system's `PYTHONPATH` variable.
+
+The Aminate library depends on an [X server](https://en.wikipedia.org/wiki/X_server) and two Python packages [pygame](https://www.pygame.org) and [numpy](https://numpy.org/). The installation of these resources is system dependent.
+
+**Using Animate on MacOS**
+
+For MacOS, the X server of choice is [XQuartz](https://www.xquartz.org/). The `pygame` and `numpy` packages can be installed using the Python3 package manager `pip3`:
+```bash
+pip3 install pygame numpy
+```
+
+**Using Animate on Windows/WSL2**
+
+For Windows/WSL2 running Ubuntu Linux, the [VcXsrv](https://sourceforge.net/projects/vcxsrv/) X server can be installed on the Windows side using a Windows-based browser. The `pygame` and `numpy` packages can be installed on the Ubuntu side from the command-line using the Python package manager `pip3`:
+```bash
+pip3 install pygame numpy
+```
+Note that the X server is running on the Windows side while the Python program is running on the WSL2/Ubuntu side. Graphical display requests are issued by the X server to whatever computer IP address is found the the systems `DISPLAY` environment variable. This variable must be set with care in WSL2. The correct IP address can be found as the value of `nameserver` in the `/etc/resolv.conf` file. Note that **display requests may be blocked by the Windows Defender Firewall** so it is important to turn Windows Defender Firewall off when running programs using the Animate library.
+
+**Using Animate on Windows**
+
+We haven't tested the system on Windows yet though we have no reason to believe it would be a problem.
 
 
 
