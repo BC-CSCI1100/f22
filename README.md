@@ -90,7 +90,7 @@ Robert Muller — Boston College
 |      |        | T 09/20/22 | Workshop: Graphics |
 |      |        | W 09/21/22 | More on Graphics |
 |      |        | R 09/22/22 | Workshop: More Graphics |
-|  5  |   | M 09/26/22 | Repetition and Lists |
+|  [5](https://github.com/BC-CSCI1100/Week05)  |   | M 09/26/22 | Repetition and Lists |
 |      |        | T 09/27/22 |  |
 |      |        | W 09/28/22 |  |
 |      |        | R 09/29/22 | |
