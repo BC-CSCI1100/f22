@@ -91,13 +91,13 @@ Robert Muller — Boston College
 |      |        | W 09/21/22 | More on Graphics |
 |      |        | R 09/22/22 | Workshop: More Graphics |
 |  [5](https://github.com/BC-CSCI1100/Week05)  |   | M 09/26/22 | Repetition and Lists |
-|      |        | T 09/27/22 |  |
-|      |        | W 09/28/22 |  |
-|      |        | R 09/29/22 | |
-|  6  |   | M 10/03/22 | Animation; Model-View-Update |
-|      |        | T 10/04/22 |  |
-|      |        | W 10/05/22 |  |
-|      |        | R 10/06/22 | |
+|      |        | T 09/27/22 | Working with Lists |
+|      |        | W 09/28/22 | Computing Distances between Points |
+|      |        | R 09/29/22 | Repetitive Algorithms on Numbers -- prime numbers |
+|  [6](https://github.com/BC-CSCI1100/Week06)  |   | M 10/03/22 | Best Practices for Model-View-Update in Python - the touchSquares App |
+|      |        | T 10/04/22 | Using Enumerations & Classes to Introduce Meaningful Symbolic Names |
+|      |        | W 10/05/22 | Workshop on PS3 |
+|      |        | R 10/06/22 | Workshop on PS3 |
 |  7  |   | M 10/10/22 | **No Meeting** |
 |      |        | T 10/11/22 | More Animation |
 |      |        | W 10/12/22 |  |
