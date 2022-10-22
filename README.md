@@ -102,11 +102,11 @@ Robert Muller — Boston College
 |      |        | T 10/11/22 | More Animation |
 |      |        | W 10/12/22 |  |
 |      |        | R 10/13/22 | |
-|  8  |   | M 10/17/22 | Numeral Systems & Digital Representations |
-|      |        | T 10/18/22 |  |
-|      |        | W 10/19/22 |  |
-|      |        | R 10/20/22 | |
-|  9  |   | M 10/24/22 | Machines |
+|  [8](https://github.com/BC-CSCI1100/Week08)  |   | M 10/17/22 | A Statistical Model of English Text |
+|      |        | T 10/18/22 | More on Models of Text |
+|      |        | W 10/19/22 | Some Useful functions for PS4 |
+|      |        | R 10/20/22 | No Meeting |
+|  9  |   | M 10/24/22 | Numeral Systems |
 |      |        | T 10/25/22 |  |
 |      |        | W 10/26/22 |  |
 |      |        | R 10/27/22 | |
